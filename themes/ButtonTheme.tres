@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://r386d6tfbxnc"]
+
+[ext_resource type="FontFile" uid="uid://46bshovhdl6w" path="res://assets/fonts/kenney_fontpackage/fonts/kenney_pixel.ttf" id="1_4btlw"]
+
+[resource]
+default_font = ExtResource("1_4btlw")
+default_font_size = 48
