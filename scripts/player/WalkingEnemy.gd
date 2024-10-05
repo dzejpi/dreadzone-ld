@@ -10,16 +10,20 @@ extends CharacterBody3D
 @onready var creature_slug: Node3D = $Creatures/CreatureSlug
 @onready var creature_spider: Node3D = $Creatures/CreatureSpider
 
+const JUMP_VELOCITY = 5
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-
-var creature_speed = 1
+var creature_speed = 4
 var is_following_player = true
 
 var health = 100
 
 var base_damage_countdown = 2
 var damage_coutdown = base_damage_countdown
+
+var base_jump_countdown = 4
+var current_jump_countdown = 0
 
 var frog_score = 20
 var rat_score = 10
@@ -31,6 +35,9 @@ func _process(delta: float) -> void:
 	
 	if damage_coutdown > 0:
 		damage_coutdown -= 1 * delta
+	
+	if current_jump_countdown > 0:
+		current_jump_countdown -= 1 * delta
 	
 	if enemy_raycast.is_colliding():
 		var collision_object = enemy_raycast.get_collider().name
@@ -60,6 +67,15 @@ func _physics_process(delta: float) -> void:
 		var direction = -global_transform.basis.z.normalized()
 		velocity.x = direction.x * creature_speed
 		velocity.z = direction.z * creature_speed
+		
+		# Jump at player if within the distance
+		var distance
+		distance = global_transform.origin.distance_to(global_var.current_player_position)
+		if distance < 3:
+			if current_jump_countdown <= 0:
+				current_jump_countdown = base_jump_countdown
+				# Jump
+				velocity.y = JUMP_VELOCITY
 	else:
 		velocity.z = 0
 	
