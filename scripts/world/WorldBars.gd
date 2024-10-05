@@ -5,7 +5,7 @@ extends Node3D
 
 var closed_position_y = 0.0
 var open_position_y = -4.0
-var slide_time = 1.0
+var slide_time = 4.0
 
 
 func toggle_door():

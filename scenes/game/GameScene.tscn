@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=18 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
@@ -26,6 +26,9 @@ background_mode = 2
 sky = SubResource("Sky_7tnta")
 ambient_light_color = Color(1, 1, 1, 1)
 ambient_light_sky_contribution = 0.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k884e"]
+size = Vector3(10, 3, 1)
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_kwbbw")
@@ -6457,3 +6460,64 @@ environment = SubResource("Environment_vdd5h")
 
 [node name="PlayerScene" parent="CharacterBodies" instance=ExtResource("2_rd5ok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 55)
+
+[node name="BeginningArenaA" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 28)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeginningArenaA"]
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BeginningArenaA"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BeginningArenaA"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -3, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="BeginningArenaB" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -85, 2, -1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeginningArenaB"]
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BeginningArenaB"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BeginningArenaB"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -3, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="BeginningArenaC" type="Area3D" parent="."]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -270, 2, 72)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeginningArenaC"]
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BeginningArenaC"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BeginningArenaC"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -3, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="BeginningArenaD" type="Area3D" parent="."]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -125, 2, 82)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BeginningArenaD"]
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BeginningArenaD"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 5, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="BeginningArenaD"]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -3, 0, 0)
+shape = SubResource("BoxShape3D_k884e")
+
+[connection signal="body_entered" from="BeginningArenaA" to="." method="_on_beginning_arena_a_body_entered"]
+[connection signal="body_entered" from="BeginningArenaB" to="." method="_on_beginning_arena_b_body_entered"]
+[connection signal="body_entered" from="BeginningArenaC" to="." method="_on_beginning_arena_c_body_entered"]
+[connection signal="body_entered" from="BeginningArenaD" to="." method="_on_beginning_arena_d_body_entered"]
