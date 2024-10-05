@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_x3jes"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mimf4"]
-size = Vector3(1, 8, 4)
+size = Vector3(1, 4, 4)
 
 [node name="WorldDoors" instance=ExtResource("1_u1c68")]
 
@@ -14,5 +14,5 @@ surface_material_override/0 = ExtResource("2_x3jes")
 [node name="HardSurface" type="StaticBody3D" parent="." index="1"]
 
 [node name="HardSurfaceCollider" type="CollisionShape3D" parent="HardSurface" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 6.01099, -2)
 shape = SubResource("BoxShape3D_mimf4")
