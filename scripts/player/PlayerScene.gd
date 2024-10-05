@@ -138,35 +138,35 @@ func _input(event):
 			rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
 			player_camera.rotation_degrees.x = clamp(player_camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90)
 	
-	if Input.is_action_just_pressed("game_pause"):
-		if !is_game_over && !is_game_won:
-			if is_game_paused:
-				is_game_paused = false
-				game_pause_scene.is_game_paused = is_game_paused
-			else:
-				is_game_paused = true
-				game_pause_scene.is_game_paused = is_game_paused
+		if Input.is_action_just_pressed("game_pause"):
+			if !is_game_over && !is_game_won:
+				if is_game_paused:
+					is_game_paused = false
+					game_pause_scene.is_game_paused = is_game_paused
+				else:
+					is_game_paused = true
+					game_pause_scene.is_game_paused = is_game_paused
+			
+			update_pause_state()
+			
+		if Input.is_action_just_pressed("gun_a"):
+			switch_gun(1)
 		
-		update_pause_state()
+		if Input.is_action_just_pressed("gun_b"):
+			switch_gun(2)
 		
-	if Input.is_action_just_pressed("gun_a"):
-		switch_gun(1)
-	
-	if Input.is_action_just_pressed("gun_b"):
-		switch_gun(2)
-	
-	if Input.is_action_just_pressed("gun_c"):
-		switch_gun(3)
-	
-	if Input.is_action_just_pressed("gun_d"):
-		switch_gun(4)
-	
-	if Input.is_action_just_pressed("gun_e"):
-		switch_gun(5)
-	
-	# Autofire for now. Might differentiate later non-automatic guns. 
-	if Input.is_action_pressed("gun_shoot"):
-		fire_weapon()
+		if Input.is_action_just_pressed("gun_c"):
+			switch_gun(3)
+		
+		if Input.is_action_just_pressed("gun_d"):
+			switch_gun(4)
+		
+		if Input.is_action_just_pressed("gun_e"):
+			switch_gun(5)
+		
+		# Autofire for now. Might differentiate later non-automatic guns. 
+		if Input.is_action_pressed("gun_shoot"):
+			fire_weapon()
 
 
 func _physics_process(delta):
@@ -211,6 +211,10 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		if is_fov_dynamic:
 			decrease_fov(delta)
+	
+	# Stop any movement when the game is paused/over/won
+	if !global_var.is_player_playing:
+		velocity = Vector3(0, 0, 0)
 	
 	move_and_slide()
 
