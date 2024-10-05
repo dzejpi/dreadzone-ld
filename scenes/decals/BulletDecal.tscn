@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdplfx6gjaxmq"]
+[gd_scene load_steps=3 format=3 uid="uid://bdplfx6gjaxmq"]
 
 [ext_resource type="Texture2D" uid="uid://2vdm2dkakbt6" path="res://assets/sprites/game_textures/spr_bullet_hole.png" id="1_gndjk"]
+[ext_resource type="PackedScene" uid="uid://bkmpocmr8qmm3" path="res://scenes/decals/BulletDust.tscn" id="2_ie14p"]
 
 [node name="BulletDecal" type="Decal"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
 size = Vector3(0.5, 0.5, 0.5)
 texture_albedo = ExtResource("1_gndjk")
+
+[node name="BulletDust" parent="." instance=ExtResource("2_ie14p")]

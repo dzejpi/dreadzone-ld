@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bx2k4xe5ydlhc"]
+[gd_scene load_steps=3 format=3 uid="uid://bx2k4xe5ydlhc"]
 
 [ext_resource type="Texture2D" uid="uid://v3o6i2ycj73d" path="res://assets/sprites/game_textures/spr_blood_splatter.png" id="1_e5v2q"]
+[ext_resource type="PackedScene" uid="uid://dfj1vsj8gmoje" path="res://scenes/decals/BloodDust.tscn" id="2_oxpgo"]
 
 [node name="BloodDecal" type="Decal"]
 transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
 size = Vector3(1, 1, 1)
 texture_albedo = ExtResource("1_e5v2q")
+
+[node name="BloodDust" parent="." instance=ExtResource("2_oxpgo")]

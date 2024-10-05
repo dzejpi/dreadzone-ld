@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfj1vsj8gmoje"]
+
+[ext_resource type="Script" path="res://scripts/decals/DustEffect.gd" id="1_ex4tu"]
+[ext_resource type="Texture2D" uid="uid://b66k1q27phqrk" path="res://assets/sprites/game_textures/spr_blood_dust.png" id="1_rxwlx"]
+
+[node name="BloodDust" type="Node3D"]
+script = ExtResource("1_ex4tu")
+
+[node name="SpriteA" type="Sprite3D" parent="."]
+texture_filter = 2
+texture = ExtResource("1_rxwlx")
+
+[node name="SpriteB" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+texture_filter = 2
+texture = ExtResource("1_rxwlx")
