@@ -70,6 +70,9 @@ var minigun_damage = 20
 var base_gunfire_effect_countdown = 0.1
 var gunfire_effect_countdown = 0
 
+var camera_tilt_amount = 0.1
+var camera_tilt_speed = 5
+
 var debug = true
 
 
@@ -87,8 +90,20 @@ func _ready():
 func _process(delta):
 	# Unnecessary for now
 	#process_collisions()
-	# Update pause state if the user clicks on Continue
 	
+	# Camera tilting, 0 by default
+	var camera_tilt_target = 0.0
+	
+	if Input.is_action_pressed("move_left"):
+		camera_tilt_target = camera_tilt_amount
+	elif Input.is_action_pressed("move_right"):
+		camera_tilt_target = -camera_tilt_amount
+	
+	var current_cam_rotation = player_camera.rotation.z
+	player_camera.rotation.z = lerp_angle(current_cam_rotation, camera_tilt_target, camera_tilt_speed * delta)
+	
+	
+	# Update pause state if the user clicks on Continue
 	score_label.text = str(global_var.current_score)
 	
 	global_var.current_player_position = self.global_transform.origin
