@@ -11,13 +11,21 @@ extends CharacterBody3D
 @onready var creature_slug: Node3D = $Creatures/CreatureSlug
 @onready var creature_spider: Node3D = $Creatures/CreatureSpider
 
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+
 
 var creature_speed = 1
 var is_following_player = true
 
 var health = 100
 
-var damage_coutdown = 60
+var base_damage_countdown = 2
+var damage_coutdown = base_damage_countdown
+
+var frog_score = 20
+var rat_score = 10
+var slug_score = 10
+var spider_score = 100
 
 
 func _ready() -> void:
@@ -26,21 +34,32 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
+	if damage_coutdown > 0:
+		damage_coutdown -= 1 * delta
+	
 	if enemy_raycast.is_colliding():
 		var collision_object = enemy_raycast.get_collider().name
 		if collision_object == "PlayerScene":
 			print("Enemy is looking at player")
+			
+			if damage_coutdown <= 0:
+				enemy_raycast.get_collider().receive_damage(10)
+				damage_coutdown = base_damage_countdown
 
 
 func _physics_process(delta: float) -> void:
+	# Gravity
+	if not is_on_floor():
+		velocity.y -= gravity * delta * 8
+	
 	if is_following_player:
 		if player:
 			look_at(player.global_transform.origin)
 			velocity = transform.basis.z * -creature_speed
-			move_and_slide()
 	else:
 		velocity.z = 0
-		move_and_slide()
+	
+	move_and_slide()
 
 
 func seek_player():
@@ -71,4 +90,23 @@ func receive_damage(damage_received):
 
 
 func die():
+	global_var.current_score += 20
+	global_var.current_enemies_killed += 1
+	
 	queue_free()
+
+
+func get_creature_score():
+	match(creature_number):
+		1:
+			# Rat
+			return rat_score
+		2:
+			# Frog
+			return frog_score
+		3:
+			# Slug
+			return slug_score
+		4:
+			# Spider
+			return spider_score

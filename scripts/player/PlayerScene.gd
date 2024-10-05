@@ -21,6 +21,8 @@ const JUMP_VELOCITY = 4.5
 @onready var weapon_machine_gun: Node3D = $PlayerHead/Camera/PlayerHands/WeaponMachineGun
 @onready var weapon_minigun: Node3D = $PlayerHead/Camera/PlayerHands/WeaponMinigun
 
+@onready var health_label: Label = $PlayerUI/GameUI/HealthLabel
+@onready var score_label: Label = $PlayerUI/GameUI/ScoreLabel
 
 @export var is_fov_dynamic = true
 
@@ -72,8 +74,11 @@ func _ready():
 
 
 func _process(delta):
-	process_collisions()
+	# Unnecessary for now
+	#process_collisions()
 	# Update pause state if the user clicks on Continue
+	
+	score_label.text = str(global_var.current_score)
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
@@ -262,6 +267,8 @@ func receive_damage(damage_received):
 	if player_health <= 0:
 		player_health = 0
 		toggle_game_over()
+		
+	health_label.text = str(player_health)
 
 
 func fire_weapon():
@@ -271,7 +278,7 @@ func fire_weapon():
 		
 		if shooting_raycast.is_colliding():
 			var collision_object = shooting_raycast.get_collider().name
-			print("Shooting raycast is looking at: " + collision_object + ".")
+			print("Player shot: " + collision_object + ".")
 			
 			if collision_object != "HardSurface":
 				var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")

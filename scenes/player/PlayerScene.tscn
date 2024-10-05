@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b8tc7q5tq6x8m"]
+[gd_scene load_steps=14 format=3 uid="uid://b8tc7q5tq6x8m"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScene.gd" id="1_63dc3"]
 [ext_resource type="PackedScene" uid="uid://ctfwa14d6xy7i" path="res://scenes/weapons/WeaponPistol.tscn" id="2_c2ur0"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://d2yn1ctpvuua8" path="res://assets/sprites/game_textures/spr_crosshair.png" id="6_1n2bp"]
 [ext_resource type="PackedScene" uid="uid://c6tfxjew4tatn" path="res://scenes/weapons/WeaponMinigun.tscn" id="6_ivwdk"]
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/PlayerTooltip.tscn" id="6_km5q6"]
+[ext_resource type="Theme" uid="uid://r386d6tfbxnc" path="res://themes/ButtonTheme.tres" id="12_plvxg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_votpe"]
 
@@ -80,3 +81,20 @@ position = Vector2(0, 392)
 texture_filter = 1
 position = Vector2(640, 360)
 texture = ExtResource("6_1n2bp")
+
+[node name="HealthLabel" type="Label" parent="PlayerUI/GameUI"]
+offset_left = 64.0
+offset_top = 656.0
+offset_right = 160.0
+offset_bottom = 704.0
+theme = ExtResource("12_plvxg")
+text = "100"
+vertical_alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="PlayerUI/GameUI"]
+offset_right = 1280.0
+offset_bottom = 64.0
+theme = ExtResource("12_plvxg")
+text = "123456789"
+horizontal_alignment = 1
+vertical_alignment = 1

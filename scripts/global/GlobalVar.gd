@@ -4,6 +4,12 @@ extends Node
 @onready var music_node = $MusicPlayer
 @onready var sfx_node = $SfxPlayer
 
+var current_score = 0
+var current_enemies_killed = 0
+
+var record_score = 0
+var record_enemies_killed = 0
+
 # Necessary to replace null with a proper preload("res://...")
 var music_game_music = null
 
