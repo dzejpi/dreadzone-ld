@@ -26,6 +26,9 @@ const JUMP_VELOCITY = 4.5
 
 @export var is_fov_dynamic = true
 
+const BLOOD_DECAL = preload("res://scenes/decals/BloodDecal.tscn")
+const BULLET_DECAL = preload("res://scenes/decals/BulletDecal.tscn")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -288,6 +291,18 @@ func fire_weapon():
 				var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
 				if collision_shape:
 					shooting_raycast.get_collider().receive_damage(100)
+					
+					var hit_position = shooting_raycast.get_collision_point()
+					var hit_normal = shooting_raycast.get_collision_normal()
+					var hit_object = shooting_raycast.get_collider()
+					
+					create_decal(hit_position, hit_normal, "blood")
+			elif collision_object == "HardSurface":
+				var hit_position = shooting_raycast.get_collision_point()
+				var hit_normal = shooting_raycast.get_collision_normal()
+				var hit_object = shooting_raycast.get_collider()
+				
+				create_decal(hit_position, hit_normal, "bullet")
 
 
 func set_shooting_countdown():
@@ -316,3 +331,17 @@ func get_current_damage():
 			return machine_damage
 		5:
 			return minigun_damage
+
+
+func create_decal(position: Vector3, normal: Vector3, decal_type: String):
+	if decal_type == "bullet":
+		var decal = BULLET_DECAL.instantiate()
+		get_parent().add_child(decal)
+		decal.transform.origin = position
+		decal.look_at(position + normal, Vector3.UP)
+	elif decal_type == "blood":
+		var decal = BLOOD_DECAL.instantiate()
+		
+		get_parent().add_child(decal)
+		decal.transform.origin = position
+		decal.look_at(position + normal, Vector3.UP)
