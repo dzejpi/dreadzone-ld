@@ -378,14 +378,19 @@ func show_fire():
 	match(current_gun):
 		1:
 			weapon_pistol_fire.show()
+			weapon_pistol_fire.rotation.z += deg_to_rad(30)
 		2:
 			weapon_rifle_fire.show()
+			weapon_rifle_fire.rotation.z += deg_to_rad(30)
 		3:
 			weapon_shotgun_fire.show()
+			weapon_shotgun_fire.rotation.z += deg_to_rad(30)
 		4:
 			weapon_machine_gun_fire.show()
+			weapon_machine_gun_fire.rotation.z += deg_to_rad(30)
 		5:
 			weapon_minigun_fire.show()
+			weapon_minigun_fire.rotation.z += deg_to_rad(30)
 
 
 func turn_all_fires_down():

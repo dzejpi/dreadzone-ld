@@ -37,7 +37,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.19966, -0.14)
 
 [node name="WeaponPistol" parent="PlayerHead/Camera/PlayerHands" instance=ExtResource("2_c2ur0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, -0.025, 0)
-visible = false
 
 [node name="WeaponRifle" parent="PlayerHead/Camera/PlayerHands" instance=ExtResource("3_efmxo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, -0.055, 0.39)
@@ -53,12 +52,12 @@ visible = false
 
 [node name="WeaponMinigun" parent="PlayerHead/Camera/PlayerHands" instance=ExtResource("6_ivwdk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.075, 0.035)
+visible = false
 
 [node name="FirePoints" type="Node3D" parent="PlayerHead/Camera/PlayerHands"]
 
 [node name="PistolFire" type="Node3D" parent="PlayerHead/Camera/PlayerHands/FirePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0238476, 0.0945027, -0.223617)
-visible = false
 
 [node name="PistolFireSpriteA" type="Sprite3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/PistolFire"]
 transform = Transform3D(4.77671e-16, 1.09278e-08, -0.25, 0.25, -1.09278e-08, 0, -1.09278e-08, -0.25, -1.09278e-08, 0.00637081, 0.000921845, -0.075938)
