@@ -39,7 +39,9 @@ var fov_change_speed = 5
 
 var current_gun = 1
 
-var debug = false
+var player_health = 100
+
+var debug = true
 
 
 func _ready():
@@ -229,3 +231,10 @@ func switch_gun(new_gun):
 			5:
 				# Minigun
 				weapon_minigun.show()
+
+
+func receive_damage(damage_received):
+	player_health -= damage_received
+	if player_health <= 0:
+		player_health = 0
+		toggle_game_over()

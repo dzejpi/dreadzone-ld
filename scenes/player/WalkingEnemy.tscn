@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://cwh4hi6bpmeq8"]
+
+[ext_resource type="Script" path="res://scripts/player/WalkingEnemy.gd" id="1_68vki"]
+[ext_resource type="PackedScene" uid="uid://bigjoc4qrs8lx" path="res://scenes/creatures/CreatureRat.tscn" id="2_m61hm"]
+[ext_resource type="PackedScene" uid="uid://7u1lseql81s3" path="res://scenes/creatures/CreatureFrog.tscn" id="3_xry7n"]
+[ext_resource type="PackedScene" uid="uid://cumy1takrq4q0" path="res://scenes/creatures/CreatureSlug.tscn" id="4_udvog"]
+[ext_resource type="PackedScene" uid="uid://osfyb8tfedp5" path="res://scenes/creatures/CreatureSpider.tscn" id="5_4ejn7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dkpb8"]
+radius = 0.125
+height = 0.25
+
+[node name="WalkingEnemy" type="CharacterBody3D"]
+script = ExtResource("1_68vki")
+
+[node name="EnemyCollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124594, 0)
+shape = SubResource("CapsuleShape3D_dkpb8")
+
+[node name="EnemyRaycast" type="RayCast3D" parent="."]
+
+[node name="Creatures" type="Node3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 0)
+
+[node name="CreatureRat" parent="Creatures" instance=ExtResource("2_m61hm")]
+
+[node name="CreatureFrog" parent="Creatures" instance=ExtResource("3_xry7n")]
+
+[node name="CreatureSlug" parent="Creatures" instance=ExtResource("4_udvog")]
+
+[node name="CreatureSpider" parent="Creatures" instance=ExtResource("5_4ejn7")]
