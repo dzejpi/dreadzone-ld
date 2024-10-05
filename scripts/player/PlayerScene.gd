@@ -374,23 +374,24 @@ func create_decal(position: Vector3, normal: Vector3, decal_type: String):
 
 func show_fire():
 	gunfire_effect_countdown = base_gunfire_effect_countdown
+	var random_angle = int(randf_range(10, 45))
 	
 	match(current_gun):
 		1:
 			weapon_pistol_fire.show()
-			weapon_pistol_fire.rotation.z += deg_to_rad(30)
+			weapon_pistol_fire.rotation.z += deg_to_rad(random_angle)
 		2:
 			weapon_rifle_fire.show()
-			weapon_rifle_fire.rotation.z += deg_to_rad(30)
+			weapon_rifle_fire.rotation.z += deg_to_rad(random_angle)
 		3:
 			weapon_shotgun_fire.show()
-			weapon_shotgun_fire.rotation.z += deg_to_rad(30)
+			weapon_shotgun_fire.rotation.z += deg_to_rad(random_angle)
 		4:
 			weapon_machine_gun_fire.show()
-			weapon_machine_gun_fire.rotation.z += deg_to_rad(30)
+			weapon_machine_gun_fire.rotation.z += deg_to_rad(random_angle)
 		5:
 			weapon_minigun_fire.show()
-			weapon_minigun_fire.rotation.z += deg_to_rad(30)
+			weapon_minigun_fire.rotation.z += deg_to_rad(random_angle)
 
 
 func turn_all_fires_down():
