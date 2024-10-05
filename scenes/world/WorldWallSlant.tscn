@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq70rhxp82gaf"]
+
+[ext_resource type="PackedScene" uid="uid://fqd2ssi3vg4h" path="res://assets/obj/world_obj/obj_wall_slant.gltf" id="1_wcbe2"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_metw0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_celse"]
+size = Vector3(1, 8, 5.72729)
+
+[node name="WorldWallSlant" instance=ExtResource("1_wcbe2")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="obj_wall_slant" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_metw0")
+
+[node name="HardSurface" type="StaticBody3D" parent="." index="1"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="HardSurface" index="0"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 2.28212, 4, -1.74057)
+shape = SubResource("BoxShape3D_celse")

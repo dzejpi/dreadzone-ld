@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc10vmn4wryqw"]
+
+[ext_resource type="PackedScene" uid="uid://nowlglr6v8mh" path="res://assets/obj/world_obj/obj_ceiling.gltf" id="1_xpc7r"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_141d1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c3cfn"]
+size = Vector3(4, 1, 4)
+
+[node name="WorldCeiling" instance=ExtResource("1_xpc7r")]
+
+[node name="obj_ceiling" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_141d1")
+
+[node name="HardSurface" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="HardSurface" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -2)
+shape = SubResource("BoxShape3D_c3cfn")

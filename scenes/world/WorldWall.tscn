@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dd644n8fj0ywd"]
+
+[ext_resource type="PackedScene" uid="uid://c67t68bv06cug" path="res://assets/obj/world_obj/obj_wall.gltf" id="1_yj0pb"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_44fxq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4cyoe"]
+size = Vector3(1, 8, 4)
+
+[node name="WorldWall" instance=ExtResource("1_yj0pb")]
+
+[node name="obj_wall" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_44fxq")
+
+[node name="HardSurface" type="StaticBody3D" parent="." index="1"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="HardSurface" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 4, -2)
+shape = SubResource("BoxShape3D_4cyoe")
