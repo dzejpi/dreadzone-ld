@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b8tc7q5tq6x8m"]
+[gd_scene load_steps=25 format=3 uid="uid://b8tc7q5tq6x8m"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScene.gd" id="1_63dc3"]
 [ext_resource type="PackedScene" uid="uid://ctfwa14d6xy7i" path="res://scenes/weapons/WeaponPistol.tscn" id="2_c2ur0"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://uqsnfk54cjss" path="res://scenes/game_ui/PlayerTooltip.tscn" id="6_km5q6"]
 [ext_resource type="Texture2D" uid="uid://767whxsnrq8i" path="res://assets/sprites/game_textures/spr_gunfire.png" id="7_hkq3e"]
 [ext_resource type="Theme" uid="uid://r386d6tfbxnc" path="res://themes/ButtonTheme.tres" id="12_plvxg"]
+[ext_resource type="Texture2D" uid="uid://h3ow72n4pdlv" path="res://assets/sprites/game_textures/spr_health.png" id="14_88a8p"]
+[ext_resource type="Texture2D" uid="uid://cypb7i6wpwru6" path="res://assets/sprites/game_textures/spr_damage_indicator.png" id="14_copgu"]
 
 [sub_resource type="Animation" id="Animation_h5chk"]
 resource_name = "idle"
@@ -382,6 +384,11 @@ visible = false
 
 [node name="GameUI" type="Node" parent="PlayerUI"]
 
+[node name="DamageIndicator" type="Sprite2D" parent="PlayerUI/GameUI"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("14_copgu")
+centered = false
+
 [node name="PlayerTooltip" parent="PlayerUI/GameUI" instance=ExtResource("6_km5q6")]
 position = Vector2(0, 392)
 
@@ -390,13 +397,19 @@ texture_filter = 1
 position = Vector2(640, 360)
 texture = ExtResource("6_1n2bp")
 
+[node name="HealthLabel2" type="Sprite2D" parent="PlayerUI/GameUI"]
+position = Vector2(16, 640)
+texture = ExtResource("14_88a8p")
+centered = false
+
 [node name="HealthLabel" type="Label" parent="PlayerUI/GameUI"]
-offset_left = 64.0
-offset_top = 656.0
-offset_right = 160.0
-offset_bottom = 704.0
+offset_left = 80.0
+offset_top = 644.0
+offset_right = 140.0
+offset_bottom = 700.0
 theme = ExtResource("12_plvxg")
 text = "100"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ScoreLabel" type="Label" parent="PlayerUI/GameUI"]
