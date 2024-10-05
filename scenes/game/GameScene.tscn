@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=19 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dry03wn6ma5dt" path="res://scenes/world/WorldGroundD.tscn" id="8_3nb1p"]
 [ext_resource type="PackedScene" uid="uid://dc10vmn4wryqw" path="res://scenes/world/WorldCeiling.tscn" id="8_kkj8k"]
 [ext_resource type="PackedScene" uid="uid://bop78aav3qcrv" path="res://scenes/world/WorldGroundC.tscn" id="8_q3m3c"]
+[ext_resource type="FontFile" uid="uid://46bshovhdl6w" path="res://assets/fonts/kenney_fontpackage/fonts/kenney_pixel.ttf" id="14_jjq0q"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
 panorama = ExtResource("6_mov10")
@@ -6453,13 +6454,32 @@ transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 8, 60
 [node name="WorldCeiling99" parent="GameWorld/Connections/Ceiling" instance=ExtResource("8_kkj8k")]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 8, 56)
 
+[node name="InstructionsLabel" type="Label3D" parent="GameWorld"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.99491, 2.24183, 52.0379)
+text = "WASD to walk
+Left mouse to shoot.
+Space to jump.
+Shift to sprint."
+font = ExtResource("14_jjq0q")
+font_size = 64
+outline_size = 0
+
+[node name="CongratsLabel" type="Label3D" parent="GameWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82176, 11.2418, 52.0379)
+text = "Congratulations!
+Feeling extra hot?
+Try the hardcore."
+font = ExtResource("14_jjq0q")
+font_size = 64
+outline_size = 0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vdd5h")
 
 [node name="CharacterBodies" type="Node3D" parent="."]
 
 [node name="PlayerScene" parent="CharacterBodies" instance=ExtResource("2_rd5ok")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 55)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3, 53)
 
 [node name="BeginningArenaA" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 28)
