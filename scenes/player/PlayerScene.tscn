@@ -70,7 +70,8 @@ texture_filter = 2
 texture = ExtResource("7_hkq3e")
 
 [node name="PistolLight" type="SpotLight3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/PistolFire"]
-light_energy = 5.0
+light_color = Color(0.709804, 0.619608, 0.564706, 1)
+light_energy = 10.0
 
 [node name="RifleFire" type="Node3D" parent="PlayerHead/Camera/PlayerHands/FirePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.017422, 0.104903, -0.714075)
@@ -87,7 +88,8 @@ texture_filter = 2
 texture = ExtResource("7_hkq3e")
 
 [node name="RifleLight" type="SpotLight3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/RifleFire"]
-light_energy = 5.0
+light_color = Color(0.709804, 0.619608, 0.564706, 1)
+light_energy = 10.0
 
 [node name="ShotgunFire" type="Node3D" parent="PlayerHead/Camera/PlayerHands/FirePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0407571, 0.0940684, -0.760011)
@@ -104,7 +106,8 @@ texture_filter = 2
 texture = ExtResource("7_hkq3e")
 
 [node name="ShotgunLight" type="SpotLight3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/ShotgunFire"]
-light_energy = 5.0
+light_color = Color(0.709804, 0.619608, 0.564706, 1)
+light_energy = 10.0
 
 [node name="MachineGunFire" type="Node3D" parent="PlayerHead/Camera/PlayerHands/FirePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00160037, 0.0908892, -0.394558)
@@ -121,7 +124,8 @@ texture_filter = 2
 texture = ExtResource("7_hkq3e")
 
 [node name="MachineGunLight" type="SpotLight3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/MachineGunFire"]
-light_energy = 5.0
+light_color = Color(0.709804, 0.619608, 0.564706, 1)
+light_energy = 10.0
 
 [node name="MinigunFire" type="Node3D" parent="PlayerHead/Camera/PlayerHands/FirePoints"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0223468, 0.0856653, -0.793655)
@@ -138,7 +142,8 @@ texture_filter = 2
 texture = ExtResource("7_hkq3e")
 
 [node name="RifleLight" type="SpotLight3D" parent="PlayerHead/Camera/PlayerHands/FirePoints/MinigunFire"]
-light_energy = 5.0
+light_color = Color(0.709804, 0.619608, 0.564706, 1)
+light_energy = 10.0
 
 [node name="BodyCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

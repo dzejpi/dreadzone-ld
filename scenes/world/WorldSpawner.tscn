@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c04g4fddeafan"]
+
+[ext_resource type="PackedScene" uid="uid://dvqvfow4wdbcm" path="res://assets/obj/world_obj/obj_spawner.gltf" id="1_let0r"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_tu55k"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q2vnk"]
+size = Vector3(4, 1, 4)
+
+[node name="WorldSpawner" instance=ExtResource("1_let0r")]
+
+[node name="obj_spawner" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_tu55k")
+
+[node name="HardSurface" type="StaticBody3D" parent="." index="1"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="HardSurface" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -2)
+shape = SubResource("BoxShape3D_q2vnk")
+
+[node name="HardSurfaceCollider2" type="CollisionShape3D" parent="HardSurface" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, 2, -3.5)
+shape = SubResource("BoxShape3D_q2vnk")
+
+[node name="HardSurfaceCollider3" type="CollisionShape3D" parent="HardSurface" index="2"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, 2, -0.5)
+shape = SubResource("BoxShape3D_q2vnk")
+
+[node name="HardSurfaceCollider4" type="CollisionShape3D" parent="HardSurface" index="3"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -0.5, 2, -2)
+shape = SubResource("BoxShape3D_q2vnk")

@@ -55,7 +55,7 @@ var player_health = 100
 
 var shooting_countdown = 0
 
-var pistol_cadence = 1
+var pistol_cadence = 0.3
 var rifle_cadence = 0.6
 var shotgun_cadence = 2
 var machine_gun_cadence = 0.1

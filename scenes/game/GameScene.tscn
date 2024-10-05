@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=12 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
 [ext_resource type="PackedScene" uid="uid://b8tc7q5tq6x8m" path="res://scenes/player/PlayerScene.tscn" id="2_rd5ok"]
 [ext_resource type="PackedScene" uid="uid://bq70rhxp82gaf" path="res://scenes/world/WorldWallSlant.tscn" id="3_eo84c"]
 [ext_resource type="PackedScene" uid="uid://dd644n8fj0ywd" path="res://scenes/world/WorldWall.tscn" id="4_1atbh"]
+[ext_resource type="PackedScene" uid="uid://c04g4fddeafan" path="res://scenes/world/WorldSpawner.tscn" id="5_bc7q2"]
 [ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="6_mov10"]
 [ext_resource type="PackedScene" uid="uid://cwh4hi6bpmeq8" path="res://scenes/player/WalkingEnemy.tscn" id="7_1drgu"]
 
@@ -1035,6 +1036,80 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 
 [node name="WorldWall120" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 32)
 
+[node name="Spawners" type="Node3D" parent="GameWorld/ArenaA"]
+
+[node name="WorldSpawner1" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -20)
+
+[node name="WorldSpawner2" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -12)
+
+[node name="WorldSpawner3" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -4)
+
+[node name="WorldSpawner4" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 8)
+
+[node name="WorldSpawner5" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 16)
+
+[node name="WorldSpawner6" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 24)
+
+[node name="WorldSpawner7" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 8, 36)
+
+[node name="WorldSpawner8" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 8, 36)
+
+[node name="WorldSpawner9" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 8, 36)
+
+[node name="WorldSpawner10" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 8, 36)
+
+[node name="WorldSpawner11" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 8, 36)
+
+[node name="WorldSpawner12" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 8, 36)
+
+[node name="WorldSpawner13" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 20)
+
+[node name="WorldSpawner14" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 12)
+
+[node name="WorldSpawner15" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 4)
+
+[node name="WorldSpawner16" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -8)
+
+[node name="WorldSpawner17" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -16)
+
+[node name="WorldSpawner18" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -24)
+
+[node name="WorldSpawner19" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -20, 8, -36)
+
+[node name="WorldSpawner20" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12, 8, -36)
+
+[node name="WorldSpawner21" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -4, 8, -36)
+
+[node name="WorldSpawner22" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 8, 8, -36)
+
+[node name="WorldSpawner23" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16, 8, -36)
+
+[node name="WorldSpawner24" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("5_bc7q2")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 24, 8, -36)
+
 [node name="ArenaB" type="Node3D" parent="GameWorld"]
 
 [node name="Static" type="Node3D" parent="GameWorld/ArenaB"]
@@ -1056,16 +1131,8 @@ environment = SubResource("Environment_vdd5h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="WalkingEnemy" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6, 10, -34)
 
 [node name="WalkingEnemy2" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 8.23754)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14, 11, -34)
 creature_number = 1
-
-[node name="WalkingEnemy3" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51085, 4, 12.0506)
-creature_number = 2
-
-[node name="WalkingEnemy4" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78465, 4, 0)
-creature_number = 3
