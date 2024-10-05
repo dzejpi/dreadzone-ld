@@ -7,7 +7,6 @@
 size = Vector3(1, 8, 5.72729)
 
 [node name="WorldWallSlant" instance=ExtResource("1_wcbe2")]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
 [node name="obj_wall_slant" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_metw0")
