@@ -6,6 +6,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var player_camera = $PlayerHead/Camera
 @onready var ray_cast = $PlayerHead/Camera/RayCast3D
+@onready var shooting_raycast = $PlayerHead/Camera/ShootingCast
 
 # UI parts
 @onready var game_pause_scene = $PlayerUI/Pause/GamePauseScene
@@ -41,6 +42,21 @@ var current_gun = 1
 
 var player_health = 100
 
+var shooting_countdown = 0
+
+var pistol_cadence = 1
+var rifle_cadence = 0.6
+var shotgun_cadence = 2
+var machine_gun_cadence = 0.1
+var minigun_cadence = 0.05
+
+var pistol_damage = 10
+var rifle_damage = 20
+var shotgun_damage = 30
+var machine_damage = 20
+var minigun_damage = 20
+
+
 var debug = true
 
 
@@ -55,9 +71,13 @@ func _ready():
 	game_won_scene.hide()
 
 
-func _process(_delta):
+func _process(delta):
 	process_collisions()
 	# Update pause state if the user clicks on Continue
+	
+	if shooting_countdown > 0:
+		shooting_countdown -= 1 * delta
+	
 	if is_game_paused:
 		listen_for_pause_button_change()
 
@@ -93,6 +113,10 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("gun_e"):
 		switch_gun(5)
+	
+	# Autofire for now. Might differentiate later non-automatic guns. 
+	if Input.is_action_pressed("gun_shoot"):
+		fire_weapon()
 
 
 func _physics_process(delta):
@@ -238,3 +262,46 @@ func receive_damage(damage_received):
 	if player_health <= 0:
 		player_health = 0
 		toggle_game_over()
+
+
+func fire_weapon():
+	if shooting_countdown <= 0:
+		print("Shooting")
+		set_shooting_countdown()
+		
+		if shooting_raycast.is_colliding():
+			var collision_object = shooting_raycast.get_collider().name
+			print("Shooting raycast is looking at: " + collision_object + ".")
+			
+			if collision_object != "HardSurface":
+				var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
+				if collision_shape:
+					shooting_raycast.get_collider().receive_damage(100)
+
+
+func set_shooting_countdown():
+	match(current_gun):
+		1:
+			shooting_countdown = pistol_cadence
+		2:
+			shooting_countdown = rifle_cadence
+		3:
+			shooting_countdown = shotgun_cadence
+		4:
+			shooting_countdown = machine_gun_cadence
+		5:
+			shooting_countdown = minigun_cadence
+
+
+func get_current_damage():
+	match(current_gun):
+		1:
+			return pistol_damage
+		2:
+			return rifle_damage
+		3:
+			return shotgun_damage
+		4:
+			return machine_damage
+		5:
+			return minigun_damage

@@ -25,14 +25,19 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
+	
+	if enemy_raycast.is_colliding():
+		var collision_object = enemy_raycast.get_collider().name
+		if collision_object == "PlayerScene":
+			print("Enemy is looking at player")
 
 
 func _physics_process(delta: float) -> void:
 	if is_following_player:
-		look_at(player.global_transform.origin)
-		velocity = transform.basis.z * -creature_speed
-		move_and_slide()
+		if player:
+			look_at(player.global_transform.origin)
+			velocity = transform.basis.z * -creature_speed
+			move_and_slide()
 	else:
 		velocity.z = 0
 		move_and_slide()
@@ -66,4 +71,4 @@ func receive_damage(damage_received):
 
 
 func die():
-	pass
+	queue_free()

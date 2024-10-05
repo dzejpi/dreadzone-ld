@@ -3721,3 +3721,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="WalkingEnemy" parent="Bodies" instance=ExtResource("7_1drgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+
+[node name="WalkingEnemy2" parent="Bodies" instance=ExtResource("7_1drgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8.23754)
+
+[node name="WalkingEnemy3" parent="Bodies" instance=ExtResource("7_1drgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51085, 0, 12.0506)
+
+[node name="WalkingEnemy4" parent="Bodies" instance=ExtResource("7_1drgu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78465, 0, 0)

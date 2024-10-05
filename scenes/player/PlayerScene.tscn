@@ -23,7 +23,12 @@ script = ExtResource("1_63dc3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.64966, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="PlayerHead/Camera"]
+visible = false
 target_position = Vector3(0, 0, -3)
+
+[node name="ShootingCast" type="RayCast3D" parent="PlayerHead/Camera"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(0, -80, 0)
 
 [node name="PlayerHands" type="Node3D" parent="PlayerHead/Camera"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16, -0.19966, -0.14)
