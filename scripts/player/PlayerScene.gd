@@ -30,6 +30,10 @@ const JUMP_VELOCITY = 4.5
 @onready var weapon_machine_gun_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/MachineGunFire
 @onready var weapon_minigun_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/MinigunFire
 
+@onready var animation_player: AnimationPlayer = $PlayerHead/AnimationPlayer
+@onready var gun_animation_player: AnimationPlayer = $PlayerHead/GunAnimationPlayer
+
+
 @export var is_fov_dynamic = true
 
 const BLOOD_DECAL = preload("res://scenes/decals/BloodDecal.tscn")
@@ -85,6 +89,7 @@ func _ready():
 	game_pause_scene.hide()
 	game_over_scene.hide()
 	game_won_scene.hide()
+	animation_player.play("idle")
 
 
 func _process(delta):
@@ -171,6 +176,7 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
+		animation_player.play("idle")
 		if Input.is_action_pressed("move_sprint"):
 			if !is_game_paused && !is_game_over && !is_game_won:
 				velocity.x = direction.x * SPEED * 2
@@ -310,6 +316,12 @@ func fire_weapon():
 	if shooting_countdown <= 0:
 		if debug:
 			print("Shooting")
+		
+		# Disgusting
+		if current_gun < 4:
+			gun_animation_player.play("shoot")
+		else:
+			gun_animation_player.play("shoot_short")
 		
 		set_shooting_countdown()
 		show_fire()
