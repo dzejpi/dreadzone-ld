@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=11 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dd644n8fj0ywd" path="res://scenes/world/WorldWall.tscn" id="4_1atbh"]
 [ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="6_mov10"]
 [ext_resource type="PackedScene" uid="uid://cwh4hi6bpmeq8" path="res://scenes/player/WalkingEnemy.tscn" id="7_1drgu"]
-[ext_resource type="PackedScene" uid="uid://y37c1tpxmcyq" path="res://scenes/player/FlyingEnemy.tscn" id="8_r2ei8"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
 panorama = ExtResource("6_mov10")
@@ -1051,29 +1050,22 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vdd5h")
 
-[node name="Bodies" type="Node3D" parent="."]
+[node name="CharacterBodies" type="Node3D" parent="."]
 
-[node name="PlayerScene" parent="Bodies" instance=ExtResource("2_rd5ok")]
+[node name="PlayerScene" parent="CharacterBodies" instance=ExtResource("2_rd5ok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
-[node name="WalkingEnemy" parent="Bodies" instance=ExtResource("7_1drgu")]
+[node name="WalkingEnemy" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 0)
 
-[node name="WalkingEnemy2" parent="Bodies" instance=ExtResource("7_1drgu")]
+[node name="WalkingEnemy2" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4, 8.23754)
 creature_number = 1
 
-[node name="WalkingEnemy3" parent="Bodies" instance=ExtResource("7_1drgu")]
+[node name="WalkingEnemy3" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51085, 4, 12.0506)
 creature_number = 2
 
-[node name="WalkingEnemy4" parent="Bodies" instance=ExtResource("7_1drgu")]
+[node name="WalkingEnemy4" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78465, 4, 0)
 creature_number = 3
-
-[node name="FlyingEnemy" parent="Bodies" instance=ExtResource("8_r2ei8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 3, 0)
-
-[node name="FlyingEnemy2" parent="Bodies" instance=ExtResource("8_r2ei8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0)
-creature_number = 2
