@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctfwa14d6xy7i"]
+
+[ext_resource type="PackedScene" uid="uid://bh6wy1xk30j2a" path="res://assets/obj/guns_obj/obj_gun_a_pistol.gltf" id="1_lggw7"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_i0kje"]
+
+[node name="WeaponPistol" instance=ExtResource("1_lggw7")]
+
+[node name="obj_gun_a_pistol" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_i0kje")
+
+[node name="obj_hand" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_i0kje")
