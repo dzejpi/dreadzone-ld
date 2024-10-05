@@ -3,5 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://v3o6i2ycj73d" path="res://assets/sprites/game_textures/spr_blood_splatter.png" id="1_e5v2q"]
 
 [node name="BloodDecal" type="Decal"]
-size = Vector3(0.5, 0.5, 0.5)
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 0, 0)
+size = Vector3(1, 1, 1)
 texture_albedo = ExtResource("1_e5v2q")

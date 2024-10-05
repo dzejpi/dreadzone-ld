@@ -336,12 +336,23 @@ func get_current_damage():
 func create_decal(position: Vector3, normal: Vector3, decal_type: String):
 	if decal_type == "bullet":
 		var decal = BULLET_DECAL.instantiate()
+		
 		get_parent().add_child(decal)
 		decal.transform.origin = position
-		decal.look_at(position + normal, Vector3.UP)
+		if abs(normal.dot(Vector3(0, 1, 0))) > 0.99:
+			decal.look_at(position + normal, Vector3(1, 0, 0))
+			# Not sure why, but it needs to be rotated. Not the blood one, though
+			decal.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
+		else:
+			decal.look_at(position + normal, Vector3.UP)
+			# Same
+			decal.rotate_object_local(Vector3(1, 0, 0), deg_to_rad(90))
 	elif decal_type == "blood":
 		var decal = BLOOD_DECAL.instantiate()
 		
 		get_parent().add_child(decal)
 		decal.transform.origin = position
-		decal.look_at(position + normal, Vector3.UP)
+		if abs(normal.dot(Vector3(0, 1, 0))) > 0.99:
+			decal.look_at(position + normal, Vector3(1, 0, 0))
+		else:
+			decal.look_at(position + normal, Vector3.UP)
