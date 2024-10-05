@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=11 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dd644n8fj0ywd" path="res://scenes/world/WorldWall.tscn" id="4_1atbh"]
 [ext_resource type="PackedScene" uid="uid://c04g4fddeafan" path="res://scenes/world/WorldSpawner.tscn" id="5_bc7q2"]
 [ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="6_mov10"]
-[ext_resource type="PackedScene" uid="uid://cwh4hi6bpmeq8" path="res://scenes/player/WalkingEnemy.tscn" id="7_1drgu"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
 panorama = ExtResource("6_mov10")
@@ -1129,10 +1128,3 @@ environment = SubResource("Environment_vdd5h")
 
 [node name="PlayerScene" parent="CharacterBodies" instance=ExtResource("2_rd5ok")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-
-[node name="WalkingEnemy" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 6, 10, -34)
-
-[node name="WalkingEnemy2" parent="CharacterBodies" instance=ExtResource("7_1drgu")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 14, 11, -34)
-creature_number = 1

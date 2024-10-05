@@ -1,22 +1,25 @@
 extends Node3D
 
 
-@export var creature_to_spawn = 1
+@export var creature_to_spawn = 6
 @export var continuous_spawn = false
-@export var continuous_spawn_time = 2
+@export var continuous_spawn_time = 6
 
 @onready var spawn_point: Node3D = $SpawnPoint
 
 const FLYING_ENEMY = preload("res://scenes/player/FlyingEnemy.tscn")
 const WALKING_ENEMY = preload("res://scenes/player/WalkingEnemy.tscn")
 
-
-func _ready() -> void:
-	spawn_creature(2)
+var spawn_countdown = 0
 
 
 func _process(delta: float) -> void:
-	pass
+	if continuous_spawn:
+		if spawn_countdown <= 0:
+			spawn_creature(creature_to_spawn)
+			spawn_countdown = continuous_spawn_time
+		else:
+			spawn_countdown -= 1 * delta
 
 
 func spawn_creature(creature_number):
