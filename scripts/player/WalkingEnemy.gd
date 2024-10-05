@@ -54,9 +54,17 @@ func _physics_process(delta: float) -> void:
 	
 	if is_following_player:
 		if player:
-			var direction = (transform.basis * Vector3(0, 0, 1)).normalized()
-			#look_at(player.global_transform.origin)
-			velocity.x = 0
+			# Player's position is the target
+			var target_position = player.global_transform.origin
+			# Gotta look at it, but only on Y axis
+			look_at(target_position, Vector3(0, 1, 0))
+			# We don't want any X or Z rotation
+			self.rotation.x = 0
+			self.rotation.z = 0
+			
+			# Move forward, properly normalized
+			var direction = -global_transform.basis.z.normalized()
+			velocity.x = direction.x * creature_speed
 			velocity.z = direction.z * creature_speed
 	else:
 		velocity.z = 0
