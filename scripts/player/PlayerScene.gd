@@ -24,6 +24,12 @@ const JUMP_VELOCITY = 4.5
 @onready var health_label: Label = $PlayerUI/GameUI/HealthLabel
 @onready var score_label: Label = $PlayerUI/GameUI/ScoreLabel
 
+@onready var weapon_pistol_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/PistolFire
+@onready var weapon_rifle_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/RifleFire
+@onready var weapon_shotgun_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/ShotgunFire
+@onready var weapon_machine_gun_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/MachineGunFire
+@onready var weapon_minigun_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/MinigunFire
+
 @export var is_fov_dynamic = true
 
 const BLOOD_DECAL = preload("res://scenes/decals/BloodDecal.tscn")
@@ -61,6 +67,8 @@ var shotgun_damage = 30
 var machine_damage = 20
 var minigun_damage = 20
 
+var base_gunfire_effect_countdown = 0.1
+var gunfire_effect_countdown = 0
 
 var debug = true
 
@@ -85,6 +93,11 @@ func _process(delta):
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
+	
+	if gunfire_effect_countdown > 0:
+		gunfire_effect_countdown -= 1 * delta
+	else:
+		turn_all_fires_down()
 	
 	if is_game_paused:
 		listen_for_pause_button_change()
@@ -280,6 +293,7 @@ func fire_weapon():
 			print("Shooting")
 		
 		set_shooting_countdown()
+		show_fire()
 		
 		if shooting_raycast.is_colliding():
 			var collision_object = shooting_raycast.get_collider().name
@@ -356,3 +370,27 @@ func create_decal(position: Vector3, normal: Vector3, decal_type: String):
 			decal.look_at(position + normal, Vector3(1, 0, 0))
 		else:
 			decal.look_at(position + normal, Vector3.UP)
+
+
+func show_fire():
+	gunfire_effect_countdown = base_gunfire_effect_countdown
+	
+	match(current_gun):
+		1:
+			weapon_pistol_fire.show()
+		2:
+			weapon_rifle_fire.show()
+		3:
+			weapon_shotgun_fire.show()
+		4:
+			weapon_machine_gun_fire.show()
+		5:
+			weapon_minigun_fire.show()
+
+
+func turn_all_fires_down():
+	weapon_pistol_fire.hide()
+	weapon_rifle_fire.hide()
+	weapon_shotgun_fire.hide()
+	weapon_machine_gun_fire.hide()
+	weapon_minigun_fire.hide()
