@@ -91,6 +91,8 @@ func _process(delta):
 	
 	score_label.text = str(global_var.current_score)
 	
+	global_var.current_player_position = self.global_transform.origin
+	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
 	

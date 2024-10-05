@@ -16,6 +16,8 @@ var music_game_music = null
 # Necessary to replace null with a proper preload("res://...")
 var sfx_sound_placeholder = null
 
+var current_player_position = Vector3()
+
 
 func play_music():
 	music_node.stream = music_game_music

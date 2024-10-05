@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 @export var creature_number = 1
 
-@onready var player: CharacterBody3D = $"../PlayerScene"
 @onready var enemy_raycast: RayCast3D = $EnemyRaycast
 
 @onready var creature_firefly: Node3D = $Creatures/CreatureFirefly
@@ -22,10 +21,6 @@ var damage_coutdown = base_damage_countdown
 
 var firefly_score = 20
 var hornet_score = 20
-
-
-func _ready() -> void:
-	set_creature(creature_number)
 
 
 func _process(delta: float) -> void:
@@ -48,9 +43,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta * 8
 	
 	if is_following_player:
-		if player:
-			look_at(player.global_transform.origin)
-			velocity = transform.basis.z * -creature_speed
+		look_at(global_var.current_player_position)
+		velocity = transform.basis.z * -creature_speed
 	else:
 		velocity.z = 0
 	

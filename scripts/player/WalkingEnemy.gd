@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 @export var creature_number = 4
 
-@onready var player: CharacterBody3D = $"../PlayerScene"
 @onready var enemy_raycast: RayCast3D = $EnemyRaycast
 
 @onready var creature_rat: Node3D = $Creatures/CreatureRat
@@ -28,10 +27,6 @@ var slug_score = 10
 var spider_score = 100
 
 
-func _ready() -> void:
-	set_creature(creature_number)
-
-
 func _process(delta: float) -> void:
 	
 	if damage_coutdown > 0:
@@ -53,19 +48,18 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 	
 	if is_following_player:
-		if player:
-			# Player's position is the target
-			var target_position = player.global_transform.origin
-			# Gotta look at it, but only on Y axis
-			look_at(target_position, Vector3(0, 1, 0))
-			# We don't want any X or Z rotation
-			self.rotation.x = 0
-			self.rotation.z = 0
-			
-			# Move forward, properly normalized
-			var direction = -global_transform.basis.z.normalized()
-			velocity.x = direction.x * creature_speed
-			velocity.z = direction.z * creature_speed
+		# Player's position is the target
+		var target_position = global_var.current_player_position
+		# Gotta look at it, but only on Y axis
+		look_at(target_position, Vector3(0, 1, 0))
+		# We don't want any X or Z rotation
+		self.rotation.x = 0
+		self.rotation.z = 0
+		
+		# Move forward, properly normalized
+		var direction = -global_transform.basis.z.normalized()
+		velocity.x = direction.x * creature_speed
+		velocity.z = direction.z * creature_speed
 	else:
 		velocity.z = 0
 	
