@@ -13,6 +13,14 @@ const JUMP_VELOCITY = 4.5
 @onready var game_won_scene = $PlayerUI/GameEnd/GameWonScene
 @onready var player_tooltip = $PlayerUI/GameUI/PlayerTooltip
 
+@onready var player_hands: Node3D = $PlayerHead/Camera/PlayerHands
+@onready var weapon_pistol: Node3D = $PlayerHead/Camera/PlayerHands/WeaponPistol
+@onready var weapon_rifle: Node3D = $PlayerHead/Camera/PlayerHands/WeaponRifle
+@onready var weapon_shotgun: Node3D = $PlayerHead/Camera/PlayerHands/WeaponShotgun
+@onready var weapon_machine_gun: Node3D = $PlayerHead/Camera/PlayerHands/WeaponMachineGun
+@onready var weapon_minigun: Node3D = $PlayerHead/Camera/PlayerHands/WeaponMinigun
+
+
 @export var is_fov_dynamic = true
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -29,11 +37,14 @@ var increased_fov = 94
 var current_fov = base_fov
 var fov_change_speed = 5
 
+var current_gun = 1
+
 var debug = false
 
 
 func _ready():
 	player_camera.fov = current_fov
+	switch_gun(current_gun)
 	transition_overlay.fade_out()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	is_game_paused = false
@@ -65,6 +76,21 @@ func _input(event):
 				game_pause_scene.is_game_paused = is_game_paused
 		
 		update_pause_state()
+		
+	if Input.is_action_just_pressed("gun_a"):
+		switch_gun(1)
+	
+	if Input.is_action_just_pressed("gun_b"):
+		switch_gun(2)
+	
+	if Input.is_action_just_pressed("gun_c"):
+		switch_gun(3)
+	
+	if Input.is_action_just_pressed("gun_d"):
+		switch_gun(4)
+	
+	if Input.is_action_just_pressed("gun_e"):
+		switch_gun(5)
 
 
 func _physics_process(delta):
@@ -175,3 +201,31 @@ func decrease_fov(delta):
 
 func change_fov(new_fov):
 	player_camera.fov = new_fov
+
+
+func switch_gun(new_gun):
+	if current_gun != new_gun:
+		current_gun = new_gun
+		
+		weapon_pistol.hide()
+		weapon_rifle.hide()
+		weapon_shotgun.hide()
+		weapon_machine_gun.hide()
+		weapon_minigun.hide()
+		
+		match(new_gun):
+			1:
+				# Pistol
+				weapon_pistol.show()
+			2:
+				# Rifle
+				weapon_rifle.show()
+			3:
+				# Shotgun
+				weapon_shotgun.show()
+			4:
+				# Machine gun
+				weapon_machine_gun.show()
+			5:
+				# Minigun
+				weapon_minigun.show()
