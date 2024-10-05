@@ -18,6 +18,8 @@ var sfx_sound_placeholder = null
 
 var current_player_position = Vector3()
 
+var is_player_playing = true
+
 
 func play_music():
 	music_node.stream = music_game_music

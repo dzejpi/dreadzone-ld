@@ -81,6 +81,7 @@ var debug = true
 
 
 func _ready():
+	global_var.is_player_playing = true
 	player_camera.fov = current_fov
 	switch_gun(current_gun)
 	transition_overlay.fade_out()
@@ -98,6 +99,12 @@ func _process(delta):
 	
 	# Camera tilting, 0 by default
 	var camera_tilt_target = 0.0
+	
+	# Info for creatures to stop
+	if is_game_paused or is_game_won or is_game_over:
+		global_var.is_player_playing = false
+	elif !is_game_paused and !is_game_won and !is_game_over:
+		global_var.is_player_playing = true
 	
 	if Input.is_action_pressed("move_left"):
 		camera_tilt_target = camera_tilt_amount

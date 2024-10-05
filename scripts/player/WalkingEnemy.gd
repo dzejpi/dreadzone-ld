@@ -81,6 +81,9 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.z = 0
 	
+	if !global_var.is_player_playing:
+		velocity = Vector3(0, 0, 0)
+	
 	move_and_slide()
 
 
