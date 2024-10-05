@@ -50,12 +50,14 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	# Gravity
 	if not is_on_floor():
-		velocity.y -= gravity * delta * 8
+		velocity.y -= gravity * delta
 	
 	if is_following_player:
 		if player:
-			look_at(player.global_transform.origin)
-			velocity = transform.basis.z * -creature_speed
+			var direction = (transform.basis * Vector3(0, 0, 1)).normalized()
+			#look_at(player.global_transform.origin)
+			velocity.x = 0
+			velocity.z = direction.z * creature_speed
 	else:
 		velocity.z = 0
 	
