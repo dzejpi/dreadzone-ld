@@ -33,6 +33,18 @@ var is_player_in_arena_b = false
 var is_player_in_arena_c = false
 var is_player_in_arena_d = false
 
+var elapsed_time_a = 0.0
+var trigger_time_a = 0
+
+var elapsed_time_b = 0.0
+var trigger_time_b = 0
+
+var elapsed_time_c = 0.0
+var trigger_time_c = 0
+
+var elapsed_time_d = 0.0
+var trigger_time_d = 0
+
 
 func _ready():
 	# Enter all entrance doors
@@ -43,17 +55,17 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	if is_player_in_arena_a:
-		pass
+	if is_player_in_arena_a and !is_arena_a_clear:
+		manage_arena_a_events(delta)
 	
-	if is_player_in_arena_b:
-		pass
+	if is_player_in_arena_b and !is_arena_b_clear:
+		manage_arena_b_events(delta)
 	
-	if is_player_in_arena_c:
-		pass
+	if is_player_in_arena_c and !is_arena_c_clear:
+		manage_arena_c_events(delta)
 	
-	if is_player_in_arena_d:
-		pass
+	if is_player_in_arena_d and !is_arena_d_clear:
+		manage_arena_d_events(delta)
 
 
 func _on_beginning_arena_a_body_entered(body: Node3D) -> void:
@@ -61,7 +73,6 @@ func _on_beginning_arena_a_body_entered(body: Node3D) -> void:
 		if !is_player_in_arena_a:
 			is_player_in_arena_a = true
 			a_bars_1.toggle_door()
-			spawn_on_nth("a", 4, 2)
 
 
 func _on_beginning_arena_b_body_entered(body: Node3D) -> void:
@@ -192,3 +203,77 @@ func turn_all_spawners_off(which_spawner):
 			for child in spawners:
 				if child.has_method("spawn_creature"):
 					child.continuous_spawn = false
+
+
+func manage_arena_a_events(delta):
+	elapsed_time_a += delta
+	
+	if trigger_time_a != int(elapsed_time_a):
+		trigger_time_a = int(elapsed_time_a)
+		trigger_arena_a_event(trigger_time_a)
+		print("A trigger time: " + str(trigger_time_a))
+
+
+func manage_arena_b_events(delta):
+	elapsed_time_b += delta
+	
+	if trigger_time_b != int(elapsed_time_b):
+		trigger_time_b = int(elapsed_time_b)
+		trigger_arena_b_event(trigger_time_b)
+		print("B trigger time: " + str(trigger_time_b))
+
+
+func manage_arena_c_events(delta):
+	elapsed_time_c += delta
+	
+	if trigger_time_c != int(elapsed_time_c):
+		trigger_time_c = int(elapsed_time_c)
+		trigger_arena_c_event(trigger_time_c)
+		print("C trigger time: " + str(trigger_time_c))
+
+
+func manage_arena_d_events(delta):
+	elapsed_time_d += delta
+	
+	if trigger_time_d != int(elapsed_time_d):
+		trigger_time_d = int(elapsed_time_d)
+		trigger_arena_d_event(trigger_time_d)
+		print("D trigger time: " + str(trigger_time_d))
+
+
+func trigger_arena_a_event(event_triggered):
+	match(event_triggered):
+		5:
+			spawn_on_nth("a", 8, 2)
+		10:
+			spawn_on_nth("a", 4, 2)
+		20:
+			spawn_on_nth("a", 4, 6)
+		30:
+			spawn_on_nth("a", 4, 6)
+		40:
+			spawn_on_nth("a", 2, 6)
+		60:
+			is_arena_a_clear = true
+			a_bars_2.toggle_door()
+
+
+func trigger_arena_b_event(event_triggered):
+	match(event_triggered):
+		60:
+			is_arena_b_clear = true
+			b_bars_2.toggle_door()
+
+
+func trigger_arena_c_event(event_triggered):
+	match(event_triggered):
+		60:
+			is_arena_c_clear = true
+			c_bars_2.toggle_door()
+
+
+func trigger_arena_d_event(event_triggered):
+	match(event_triggered):
+		60:
+			is_arena_d_clear = true
+			d_bars_2.toggle_door()
