@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7ae1ryosdmot"
-path.s3tc="res://.godot/imported/spr_dreadzone_texture.png-f6599e63f9f41c52eebf890655222def.s3tc.ctex"
+path.bptc="res://.godot/imported/spr_dreadzone_texture.png-f6599e63f9f41c52eebf890655222def.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://assets/obj/spr_dreadzone_texture.png"
-dest_files=["res://.godot/imported/spr_dreadzone_texture.png-f6599e63f9f41c52eebf890655222def.s3tc.ctex"]
+dest_files=["res://.godot/imported/spr_dreadzone_texture.png-f6599e63f9f41c52eebf890655222def.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

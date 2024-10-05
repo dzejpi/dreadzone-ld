@@ -1,19 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=10 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
 [ext_resource type="PackedScene" uid="uid://b8tc7q5tq6x8m" path="res://scenes/player/PlayerScene.tscn" id="2_rd5ok"]
 [ext_resource type="PackedScene" uid="uid://bq70rhxp82gaf" path="res://scenes/world/WorldWallSlant.tscn" id="3_eo84c"]
 [ext_resource type="PackedScene" uid="uid://dd644n8fj0ywd" path="res://scenes/world/WorldWall.tscn" id="4_1atbh"]
+[ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="6_mov10"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_psv6s"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
+panorama = ExtResource("6_mov10")
+filter = false
 
-[sub_resource type="Sky" id="Sky_v1kyu"]
-sky_material = SubResource("ProceduralSkyMaterial_psv6s")
+[sub_resource type="Sky" id="Sky_7tnta"]
+sky_material = SubResource("PanoramaSkyMaterial_supnq")
 
-[sub_resource type="Environment" id="Environment_7nmuq"]
+[sub_resource type="Environment" id="Environment_vdd5h"]
 background_mode = 2
-sky = SubResource("Sky_v1kyu")
+sky = SubResource("Sky_7tnta")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
 
 [node name="GameScene" type="Node3D"]
 script = ExtResource("1_kwbbw")
@@ -3709,4 +3714,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_7nmuq")
+environment = SubResource("Environment_vdd5h")
