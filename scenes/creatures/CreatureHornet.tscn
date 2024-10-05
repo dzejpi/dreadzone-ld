@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dow6jj85h67fm"]
+
+[ext_resource type="PackedScene" uid="uid://ewqshg50xg5l" path="res://assets/obj/creatures_obj/obj_hornet.gltf" id="1_u64iq"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_gh4d7"]
+
+[node name="CreatureHornet" instance=ExtResource("1_u64iq")]
+
+[node name="obj_hornet_body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gh4d7")
+
+[node name="obj_hornet_wing_a" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_gh4d7")
+
+[node name="obj_hornet_wing_b" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_gh4d7")

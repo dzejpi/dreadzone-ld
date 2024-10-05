@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://7u1lseql81s3"]
+
+[ext_resource type="PackedScene" uid="uid://bu4dw6twjarql" path="res://assets/obj/creatures_obj/obj_frog.gltf" id="1_4ca38"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_qseaw"]
+
+[node name="CreatureFrog" instance=ExtResource("1_4ca38")]
+
+[node name="obj_frog_body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_qseaw")
+
+[node name="obj_frog_leg_a" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_qseaw")
+
+[node name="obj_frog_leg_b" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_qseaw")
+
+[node name="obj_frog_hand_a" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_qseaw")
+
+[node name="obj_frog_hand_b" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_qseaw")

@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://osfyb8tfedp5"]
+
+[ext_resource type="PackedScene" uid="uid://c0j3chcj4npm4" path="res://assets/obj/creatures_obj/obj_spider.gltf" id="1_l3oc3"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_egkmv"]
+
+[node name="CreatureSpider" instance=ExtResource("1_l3oc3")]
+
+[node name="obj_spider_body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_a" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_b" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_c" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_d" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_e" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_f" parent="." index="6"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_g" parent="." index="7"]
+surface_material_override/0 = ExtResource("2_egkmv")
+
+[node name="obj_spider_leg_h" parent="." index="8"]
+surface_material_override/0 = ExtResource("2_egkmv")

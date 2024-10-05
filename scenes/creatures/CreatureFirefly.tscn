@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd4xnkg1v03rc"]
+
+[ext_resource type="PackedScene" uid="uid://bat27raal85wj" path="res://assets/obj/creatures_obj/obj_firefly.gltf" id="1_5x2go"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_tcta6"]
+
+[node name="CreatureFirefly" instance=ExtResource("1_5x2go")]
+
+[node name="obj_firefly_body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_tcta6")
+
+[node name="obj_firefly_wing_a" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_tcta6")
+
+[node name="obj_firefly_wing_b" parent="." index="2"]
+surface_material_override/0 = ExtResource("2_tcta6")

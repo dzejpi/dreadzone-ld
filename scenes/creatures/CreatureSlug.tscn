@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cumy1takrq4q0"]
+
+[ext_resource type="PackedScene" uid="uid://d2ywjxl1oshc2" path="res://assets/obj/creatures_obj/obj_slug.gltf" id="1_emnjn"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_31hd7"]
+
+[node name="CreatureSlug" instance=ExtResource("1_emnjn")]
+
+[node name="obj_slug_body" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_31hd7")
