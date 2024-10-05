@@ -260,6 +260,16 @@ func trigger_arena_a_event(event_triggered):
 
 func trigger_arena_b_event(event_triggered):
 	match(event_triggered):
+		5:
+			spawn_on_nth("b", 8, 2)
+		10:
+			spawn_on_nth("b", 4, 2)
+		20:
+			spawn_on_nth("b", 4, 6)
+		30:
+			spawn_on_nth("b", 4, 6)
+		40:
+			spawn_on_nth("b", 2, 6)
 		60:
 			is_arena_b_clear = true
 			b_bars_2.toggle_door()
@@ -267,6 +277,16 @@ func trigger_arena_b_event(event_triggered):
 
 func trigger_arena_c_event(event_triggered):
 	match(event_triggered):
+		5:
+			spawn_on_nth("c", 8, 2)
+		10:
+			spawn_on_nth("c", 4, 2)
+		20:
+			spawn_on_nth("c", 4, 6)
+		30:
+			spawn_on_nth("c", 4, 6)
+		40:
+			spawn_on_nth("c", 2, 6)
 		60:
 			is_arena_c_clear = true
 			c_bars_2.toggle_door()
@@ -274,6 +294,16 @@ func trigger_arena_c_event(event_triggered):
 
 func trigger_arena_d_event(event_triggered):
 	match(event_triggered):
+		5:
+			spawn_on_nth("d", 8, 2)
+		10:
+			spawn_on_nth("d", 4, 2)
+		20:
+			spawn_on_nth("d", 4, 6)
+		30:
+			spawn_on_nth("d", 4, 6)
+		40:
+			spawn_on_nth("d", 2, 6)
 		60:
 			is_arena_d_clear = true
 			d_bars_2.toggle_door()
