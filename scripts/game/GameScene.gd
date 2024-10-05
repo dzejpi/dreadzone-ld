@@ -13,8 +13,15 @@ extends Node3D
 @onready var d_bars_1: Node3D = $GameWorld/ArenaD/Doors/WorldBars1
 @onready var d_bars_2: Node3D = $GameWorld/ArenaD/Doors/WorldBars2
 
-@onready var beginning_arena_a: Area3D = $BeginningArenaA
+@onready var a_spawners: Node3D = $GameWorld/ArenaA/Spawners
+@onready var b_spawners: Node3D = $GameWorld/ArenaB/Spawners
+@onready var c_spawners: Node3D = $GameWorld/ArenaC/Spawners
+@onready var d_spawners: Node3D = $GameWorld/ArenaD/Spawners
 
+@onready var beginning_arena_a: Area3D = $BeginningArenaA
+@onready var beginning_arena_b: Area3D = $BeginningArenaB
+@onready var beginning_arena_c: Area3D = $BeginningArenaC
+@onready var beginning_arena_d: Area3D = $BeginningArenaD
 
 var is_arena_a_clear = false
 var is_arena_b_clear = false
@@ -36,7 +43,17 @@ func _ready():
 
 
 func _process(delta: float) -> void:
-	pass
+	if is_player_in_arena_a:
+		pass
+	
+	if is_player_in_arena_b:
+		pass
+	
+	if is_player_in_arena_c:
+		pass
+	
+	if is_player_in_arena_d:
+		pass
 
 
 func _on_beginning_arena_a_body_entered(body: Node3D) -> void:
@@ -44,6 +61,7 @@ func _on_beginning_arena_a_body_entered(body: Node3D) -> void:
 		if !is_player_in_arena_a:
 			is_player_in_arena_a = true
 			a_bars_1.toggle_door()
+			spawn_on_nth("a", 4, 2)
 
 
 func _on_beginning_arena_b_body_entered(body: Node3D) -> void:
@@ -65,3 +83,112 @@ func _on_beginning_arena_d_body_entered(body: Node3D) -> void:
 		if !is_player_in_arena_d:
 			is_player_in_arena_d = true
 			d_bars_1.toggle_door()
+
+
+func spawn_everywhere(which_spawner, creature_number):
+	match(which_spawner):
+		"a":
+			var spawners = a_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.spawn_creature(creature_number)
+		"b":
+			var spawners = b_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.spawn_creature(creature_number)
+		"c":
+			var spawners = c_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.spawn_creature(creature_number)
+		"d":
+			var spawners = d_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.spawn_creature(creature_number)
+
+
+# Function to spawn creature on every Nth spawner
+func spawn_on_nth(which_spawner, nth, creature_number):
+	match(which_spawner):
+		"a":
+			var spawners = a_spawners.get_children()
+			for i in range(spawners.size()):
+				if i % nth == 0:
+					var child = spawners[i]
+					if child.has_method("spawn_creature"):
+						child.spawn_creature(creature_number)
+		"b":
+			var spawners = b_spawners.get_children()
+			for i in range(spawners.size()):
+				if i % nth == 0:
+					var child = spawners[i]
+					if child.has_method("spawn_creature"):
+						child.spawn_creature(creature_number)
+		"c":
+			var spawners = c_spawners.get_children()
+			for i in range(spawners.size()):
+				if i % nth == 0:
+					var child = spawners[i]
+					if child.has_method("spawn_creature"):
+						child.spawn_creature(creature_number)
+		"d":
+			var spawners = d_spawners.get_children()
+			for i in range(spawners.size()):
+				if i % nth == 0:
+					var child = spawners[i]
+					if child.has_method("spawn_creature"):
+						child.spawn_creature(creature_number)
+
+
+func turn_all_spawners_on(which_spawner, creature_number):
+	match(which_spawner):
+		"a":
+			var spawners = a_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.creature_to_spawn = creature_number
+					child.continuous_spawn = true
+		"b":
+			var spawners = b_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.creature_to_spawn = creature_number
+					child.continuous_spawn = true
+		"c":
+			var spawners = c_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.creature_to_spawn = creature_number
+					child.continuous_spawn = true
+		"d":
+			var spawners = d_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.creature_to_spawn = creature_number
+					child.continuous_spawn = true
+
+
+func turn_all_spawners_off(which_spawner):
+	match(which_spawner):
+		"a":
+			var spawners = a_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.continuous_spawn = false
+		"b":
+			var spawners = b_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.continuous_spawn = false
+		"c":
+			var spawners = c_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.continuous_spawn = false
+		"d":
+			var spawners = d_spawners.get_children()
+			for child in spawners:
+				if child.has_method("spawn_creature"):
+					child.continuous_spawn = false
