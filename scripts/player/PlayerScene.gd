@@ -273,12 +273,16 @@ func receive_damage(damage_received):
 
 func fire_weapon():
 	if shooting_countdown <= 0:
-		print("Shooting")
+		if debug:
+			print("Shooting")
+		
 		set_shooting_countdown()
 		
 		if shooting_raycast.is_colliding():
 			var collision_object = shooting_raycast.get_collider().name
-			print("Player shot: " + collision_object + ".")
+			
+			if debug:
+				print("Player shot: " + collision_object + ".")
 			
 			if collision_object != "HardSurface":
 				var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
