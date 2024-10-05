@@ -204,10 +204,12 @@ func _physics_process(delta):
 
 func process_collisions():
 	if ray_cast.is_colliding():
-		var collision_object = ray_cast.get_collider().name
-		
-		if debug:
-			print("Player is looking at: " + collision_object + ".")
+		var current_collider = ray_cast.get_collider()
+		if current_collider:
+			var collision_object = ray_cast.get_collider().name
+			
+			if debug:
+				print("Player is looking at: " + collision_object + ".")
 	else:
 		if debug:
 			print("Player is looking at: nothing.")
@@ -313,27 +315,29 @@ func fire_weapon():
 		show_fire()
 		
 		if shooting_raycast.is_colliding():
-			var collision_object = shooting_raycast.get_collider().name
-			
-			if debug:
-				print("Player shot: " + collision_object + ".")
-			
-			if collision_object != "HardSurface":
-				var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
-				if collision_shape:
-					shooting_raycast.get_collider().receive_damage(100)
-					
+			var current_collider = shooting_raycast.get_collider()
+			if current_collider:
+				var collision_object = shooting_raycast.get_collider().name
+				
+				if debug:
+					print("Player shot: " + collision_object + ".")
+				
+				if collision_object != "HardSurface":
+					var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
+					if collision_shape:
+						shooting_raycast.get_collider().receive_damage(100)
+						
+						var hit_position = shooting_raycast.get_collision_point()
+						var hit_normal = shooting_raycast.get_collision_normal()
+						var hit_object = shooting_raycast.get_collider()
+						
+						create_decal(hit_position, hit_normal, "blood")
+				elif collision_object == "HardSurface":
 					var hit_position = shooting_raycast.get_collision_point()
 					var hit_normal = shooting_raycast.get_collision_normal()
 					var hit_object = shooting_raycast.get_collider()
 					
-					create_decal(hit_position, hit_normal, "blood")
-			elif collision_object == "HardSurface":
-				var hit_position = shooting_raycast.get_collision_point()
-				var hit_normal = shooting_raycast.get_collision_normal()
-				var hit_object = shooting_raycast.get_collider()
-				
-				create_decal(hit_position, hit_normal, "bullet")
+					create_decal(hit_position, hit_normal, "bullet")
 
 
 func set_shooting_countdown():

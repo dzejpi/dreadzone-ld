@@ -40,13 +40,15 @@ func _process(delta: float) -> void:
 		current_jump_countdown -= 1 * delta
 	
 	if enemy_raycast.is_colliding():
-		var collision_object = enemy_raycast.get_collider().name
-		if collision_object == "PlayerScene":
-			print("Enemy is looking at player")
-			
-			if damage_coutdown <= 0:
-				enemy_raycast.get_collider().receive_damage(10)
-				damage_coutdown = base_damage_countdown
+		var current_collider = enemy_raycast.get_collider()
+		if current_collider:
+			var collision_object = enemy_raycast.get_collider().name
+			if collision_object == "PlayerScene":
+				print("Enemy is looking at player")
+				
+				if damage_coutdown <= 0:
+					enemy_raycast.get_collider().receive_damage(10)
+					damage_coutdown = base_damage_countdown
 
 
 func _physics_process(delta: float) -> void:
