@@ -15,6 +15,7 @@ surface_material_override/0 = ExtResource("2_3t3p8")
 [node name="HealthPickupArea" type="Area3D" parent="." index="1"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="HealthPickupArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.5, -0.5)
 shape = SubResource("BoxShape3D_41wpu")
 
 [connection signal="body_entered" from="HealthPickupArea" to="." method="_on_health_pickup_area_body_entered"]
