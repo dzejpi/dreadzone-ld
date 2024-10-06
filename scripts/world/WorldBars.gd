@@ -4,7 +4,7 @@ extends Node3D
 @export var are_bars_open = false
 
 var closed_position_y = 0.0
-var open_position_y = -4.0
+var open_position_y = -5.0
 var slide_time = 4.0
 
 
