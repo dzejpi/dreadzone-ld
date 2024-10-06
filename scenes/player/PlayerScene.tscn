@@ -417,15 +417,15 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 
 target_position = Vector3(0, -80, 0)
 
 [node name="ShootingCast2" type="RayCast3D" parent="PlayerHead/Camera"]
-transform = Transform3D(0.999814, 0.0192826, 0.00028339, 0, 0.0146951, -0.999892, -0.0192847, 0.999706, 0.0146924, 0, 0, 0)
+transform = Transform3D(0.996199, 0.0870942, 0.00128, -0.00260531, 0.0444821, -0.999007, -0.0870646, 0.995206, 0.04454, 0, 0, 0)
 target_position = Vector3(0, -80, 0)
 
 [node name="ShootingCast3" type="RayCast3D" parent="PlayerHead/Camera"]
-transform = Transform3D(0.99983, 0.0184122, -8.04822e-10, 0.00020534, -0.0111506, -0.999938, -0.018411, 0.999768, -0.0111525, 0, 0, 0)
+transform = Transform3D(0.996936, -0.0782095, 0.00107686, 0.00020534, -0.0111506, -0.999938, 0.0782166, 0.996874, -0.0111004, 0, 0, 0)
 target_position = Vector3(0, -80, 0)
 
 [node name="ShootingCast4" type="RayCast3D" parent="PlayerHead/Camera"]
-transform = Transform3D(0.999788, -0.0205764, 0.000152262, 0.000266026, 0.00552622, -0.999985, 0.0205752, 0.999773, 0.00553053, 0, 0, 0)
+transform = Transform3D(0.999788, -0.0205764, 0.000152262, 0.00165875, 0.0732174, -0.997315, 0.02051, 0.997104, 0.0732361, 0, 0, 0)
 target_position = Vector3(0, -80, 0)
 
 [node name="ShootingCast5" type="RayCast3D" parent="PlayerHead/Camera"]
