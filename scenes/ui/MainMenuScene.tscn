@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bgrdefo35f2ri"]
+[gd_scene load_steps=15 format=3 uid="uid://bgrdefo35f2ri"]
 
 [ext_resource type="Texture2D" uid="uid://dacbuha8ns5jn" path="res://assets/sprites/menu_buttons/menu_btn_normal.png" id="1_kpkvn"]
 [ext_resource type="Script" path="res://scripts/ui/MainMenuScene.gd" id="1_mj8q0"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/ui/CreditsButton.gd" id="8_8g4id"]
 [ext_resource type="Theme" uid="uid://r386d6tfbxnc" path="res://themes/ButtonTheme.tres" id="8_w4hn0"]
 [ext_resource type="Script" path="res://scripts/ui/BackButton.gd" id="12_84rwi"]
+[ext_resource type="PackedScene" uid="uid://couollwleid6p" path="res://scenes/game/BackgroundGameScene.tscn" id="14_x1j84"]
 
 [node name="MainMenuScene" type="Node2D"]
 script = ExtResource("1_mj8q0")
@@ -162,6 +163,8 @@ theme = ExtResource("8_w4hn0")
 text = "Back to menu"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GameScene" parent="." instance=ExtResource("14_x1j84")]
 
 [connection signal="pressed" from="MainMenuSection/MenuButtons/NewGameButton" to="MainMenuSection/MenuButtons/NewGameButton" method="_on_pressed"]
 [connection signal="pressed" from="MainMenuSection/MenuButtons/MusicButton" to="MainMenuSection/MenuButtons/MusicButton" method="_on_pressed"]

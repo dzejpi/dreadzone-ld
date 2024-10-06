@@ -1,0 +1,1374 @@
+[gd_scene load_steps=14 format=3 uid="uid://couollwleid6p"]
+
+[ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_88w1f"]
+[ext_resource type="PackedScene" uid="uid://bq70rhxp82gaf" path="res://scenes/world/WorldWallSlant.tscn" id="3_ladhb"]
+[ext_resource type="PackedScene" uid="uid://dd644n8fj0ywd" path="res://scenes/world/WorldWall.tscn" id="4_c3eo5"]
+[ext_resource type="PackedScene" uid="uid://bgj4mowmgtqxp" path="res://scenes/world/WorldDoors.tscn" id="5_qvdwn"]
+[ext_resource type="PackedScene" uid="uid://c04g4fddeafan" path="res://scenes/world/WorldSpawner.tscn" id="6_3lmtm"]
+[ext_resource type="PackedScene" uid="uid://cvnkqaou2k6we" path="res://scenes/world/WorldBars.tscn" id="7_0l532"]
+[ext_resource type="PackedScene" uid="uid://osfyb8tfedp5" path="res://scenes/creatures/CreatureSpider.tscn" id="9_tybw6"]
+[ext_resource type="PackedScene" uid="uid://dsdp304ho7m2h" path="res://scenes/world/WorldHealthPickup.tscn" id="13_raur3"]
+[ext_resource type="PackedScene" uid="uid://c5mk6io7iuibt" path="res://scenes/world/WorldGunPickup.tscn" id="14_tgy51"]
+[ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="15_jjvmp"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
+panorama = ExtResource("15_jjvmp")
+filter = false
+
+[sub_resource type="Sky" id="Sky_7tnta"]
+sky_material = SubResource("PanoramaSkyMaterial_supnq")
+
+[sub_resource type="Environment" id="Environment_vdd5h"]
+background_mode = 2
+sky = SubResource("Sky_7tnta")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.0
+
+[node name="GameScene" type="Node3D"]
+
+[node name="GameWorld" type="Node3D" parent="."]
+
+[node name="ArenaA" type="Node3D" parent="GameWorld"]
+
+[node name="Ground" type="Node3D" parent="GameWorld/ArenaA"]
+
+[node name="GroundChunkA" type="Node3D" parent="GameWorld/ArenaA/Ground"]
+
+[node name="GroundA" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundB" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundC" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkA"]
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundD" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkA"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkA/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundChunkB" type="Node3D" parent="GameWorld/ArenaA/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="GroundA" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundB" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundC" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkB"]
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundD" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkB/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundChunkC" type="Node3D" parent="GameWorld/ArenaA/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
+
+[node name="GroundA" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundB" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundC" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkC"]
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundD" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkC/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundChunkD" type="Node3D" parent="GameWorld/ArenaA/Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -32)
+
+[node name="GroundA" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundA" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundB" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA17" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
+
+[node name="WorldGroundA18" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 16)
+
+[node name="WorldGroundA19" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 16)
+
+[node name="WorldGroundA20" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 9, 16)
+
+[node name="WorldGroundA21" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 9, 16)
+
+[node name="WorldGroundA22" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 9, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundB" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundC" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkD"]
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundC" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="GroundD" type="Node3D" parent="GameWorld/ArenaA/Ground/GroundChunkD"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+
+[node name="WorldGroundA" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="WorldGroundA2" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
+
+[node name="WorldGroundA3" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 8)
+
+[node name="WorldGroundA4" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="WorldGroundA5" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="WorldGroundA6" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 8)
+
+[node name="WorldGroundA7" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 8)
+
+[node name="WorldGroundA8" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 4)
+
+[node name="WorldGroundA9" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12)
+
+[node name="WorldGroundA10" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="WorldGroundA11" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 16)
+
+[node name="WorldGroundA12" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 12)
+
+[node name="WorldGroundA13" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 12)
+
+[node name="WorldGroundA14" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 16)
+
+[node name="WorldGroundA15" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 16)
+
+[node name="WorldGroundA16" parent="GameWorld/ArenaA/Ground/GroundChunkD/GroundD" instance=ExtResource("2_88w1f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
+
+[node name="Walls" type="Node3D" parent="GameWorld/ArenaA"]
+
+[node name="WorldWallSlant" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28, 0, -32)
+
+[node name="WorldWallSlant2" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 32, 0, -28)
+
+[node name="WorldWallSlant3" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 28, 0, 32)
+
+[node name="WorldWallSlant4" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -32, 0, 28)
+
+[node name="WorldWall2" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -4)
+
+[node name="WorldWall3" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -8)
+
+[node name="WorldWall4" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -12)
+
+[node name="WorldWall5" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -16)
+
+[node name="WorldWall6" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -20)
+
+[node name="WorldWall7" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -24)
+
+[node name="WorldWall24" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 28)
+
+[node name="WorldWall25" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 24)
+
+[node name="WorldWall26" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 20)
+
+[node name="WorldWall27" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 16)
+
+[node name="WorldWall28" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 12)
+
+[node name="WorldWall29" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 8)
+
+[node name="WorldWall30" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 4)
+
+[node name="WorldWall8" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -36, 0, -4)
+
+[node name="WorldWall50" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -32, 0, 0)
+
+[node name="WorldWall9" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40, 0, -4)
+
+[node name="WorldWall51" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -36, 0, 0)
+
+[node name="WorldWall10" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -44, 0, -4)
+
+[node name="WorldWall52" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -40, 0, 0)
+
+[node name="WorldWall31" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -32)
+
+[node name="WorldWall32" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 0, -32)
+
+[node name="WorldWall33" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, -32)
+
+[node name="WorldWall34" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 0, -32)
+
+[node name="WorldWall35" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 0, -32)
+
+[node name="WorldWall36" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 0, -32)
+
+[node name="WorldWall37" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24, 0, -32)
+
+[node name="WorldWall54" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28, 0, -32)
+
+[node name="WorldWall55" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 0, -32)
+
+[node name="WorldWall56" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 0, -32)
+
+[node name="WorldWall57" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 0, -32)
+
+[node name="WorldWall58" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 0, -32)
+
+[node name="WorldWall59" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 0, -32)
+
+[node name="WorldWall60" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 0, -32)
+
+[node name="WorldWall61" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 0)
+
+[node name="WorldWall62" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 4)
+
+[node name="WorldWall63" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 8)
+
+[node name="WorldWall64" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 12)
+
+[node name="WorldWall65" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 16)
+
+[node name="WorldWall66" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 20)
+
+[node name="WorldWall67" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, 24)
+
+[node name="WorldWall84" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -28)
+
+[node name="WorldWall85" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -24)
+
+[node name="WorldWall86" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -20)
+
+[node name="WorldWall87" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -16)
+
+[node name="WorldWall88" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -12)
+
+[node name="WorldWall89" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -8)
+
+[node name="WorldWall90" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -4)
+
+[node name="WorldWall91" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 31)
+
+[node name="WorldWall92" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 31)
+
+[node name="WorldWall93" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 32)
+
+[node name="WorldWall94" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12, 0, 32)
+
+[node name="WorldWall95" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 0, 32)
+
+[node name="WorldWall96" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20, 0, 32)
+
+[node name="WorldWall97" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 0, 32)
+
+[node name="WorldWall114" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28, 0, 32)
+
+[node name="WorldWall115" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 24, 0, 32)
+
+[node name="WorldWall116" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0, 32)
+
+[node name="WorldWall117" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16, 0, 32)
+
+[node name="WorldWall118" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 31)
+
+[node name="WorldWallSlant5" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28, 8, -32)
+
+[node name="WorldWallSlant6" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 32, 8, -28)
+
+[node name="WorldWallSlant7" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 28, 8, 32)
+
+[node name="WorldWallSlant8" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_ladhb")]
+transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -32, 8, 28)
+
+[node name="WorldWall38" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 28)
+
+[node name="WorldWall39" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 20)
+
+[node name="WorldWall40" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 12)
+
+[node name="WorldWall41" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 4)
+
+[node name="WorldWall49" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 0)
+
+[node name="WorldWall46" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -4)
+
+[node name="WorldWall47" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -12)
+
+[node name="WorldWall48" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -20)
+
+[node name="WorldWall42" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 8, -32)
+
+[node name="WorldWall43" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 8, -32)
+
+[node name="WorldWall44" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 16, 8, -32)
+
+[node name="WorldWall45" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 24, 8, -32)
+
+[node name="WorldWall68" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -28, 8, -32)
+
+[node name="WorldDoors13" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 8, -32)
+
+[node name="WorldDoors14" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 8, -32)
+
+[node name="WorldDoors15" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 8, -32)
+
+[node name="WorldDoors16" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 8, -32)
+
+[node name="WorldDoors17" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 8, -32)
+
+[node name="WorldDoors18" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 8, -32)
+
+[node name="WorldDoors19" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 8, 33)
+
+[node name="WorldDoors20" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 8, 33)
+
+[node name="WorldDoors21" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 8, 33)
+
+[node name="WorldDoors22" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 8, 33)
+
+[node name="WorldDoors23" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 8, 33)
+
+[node name="WorldDoors24" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 8, 33)
+
+[node name="WorldWall69" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20, 8, -32)
+
+[node name="WorldWall70" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12, 8, -32)
+
+[node name="WorldWall71" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4, 8, -32)
+
+[node name="WorldWall72" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, 0)
+
+[node name="WorldWall73" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, 8)
+
+[node name="WorldWall74" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, 16)
+
+[node name="WorldWall75" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, 24)
+
+[node name="WorldWall98" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, -28)
+
+[node name="WorldWall99" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, -20)
+
+[node name="WorldWall100" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, -12)
+
+[node name="WorldWall101" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 8, -4)
+
+[node name="WorldWall102" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 8, 32)
+
+[node name="WorldWall106" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 8, 32)
+
+[node name="WorldWall103" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 8, 32)
+
+[node name="WorldWall104" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16, 8, 32)
+
+[node name="WorldWall105" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24, 8, 32)
+
+[node name="WorldWall120" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28, 8, 32)
+
+[node name="WorldWall121" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 8, 32)
+
+[node name="WorldWall122" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 8, 32)
+
+[node name="WorldWall119" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_c3eo5")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 31)
+
+[node name="WorldDoors" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, -20)
+
+[node name="WorldDoors2" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, -12)
+
+[node name="WorldDoors3" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, -4)
+
+[node name="WorldDoors4" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, 8)
+
+[node name="WorldDoors5" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, 16)
+
+[node name="WorldDoors6" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, 24)
+
+[node name="WorldDoors7" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -24)
+
+[node name="WorldDoors8" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -16)
+
+[node name="WorldDoors9" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, -8)
+
+[node name="WorldDoors10" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 8)
+
+[node name="WorldDoors11" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 16)
+
+[node name="WorldDoors12" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 8, 24)
+
+[node name="Spawners" type="Node3D" parent="GameWorld/ArenaA"]
+
+[node name="WorldSpawner1" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -20)
+
+[node name="WorldSpawner2" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -12)
+
+[node name="WorldSpawner3" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, -4)
+
+[node name="WorldSpawner4" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 8)
+
+[node name="WorldSpawner5" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 16)
+
+[node name="WorldSpawner6" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 8, 24)
+
+[node name="WorldSpawner7" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 20, 8, 36)
+
+[node name="WorldSpawner8" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 12, 8, 36)
+
+[node name="WorldSpawner9" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4, 8, 36)
+
+[node name="WorldSpawner10" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -8, 8, 36)
+
+[node name="WorldSpawner11" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 8, 36)
+
+[node name="WorldSpawner12" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -24, 8, 36)
+
+[node name="WorldSpawner13" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 20)
+
+[node name="WorldSpawner14" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 12)
+
+[node name="WorldSpawner15" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, 4)
+
+[node name="WorldSpawner16" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -12)
+
+[node name="WorldSpawner17" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -20)
+
+[node name="WorldSpawner18" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36, 8, -28)
+
+[node name="WorldSpawner19" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -20, 8, -36)
+
+[node name="WorldSpawner20" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -12, 8, -36)
+
+[node name="WorldSpawner21" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -4, 8, -36)
+
+[node name="WorldSpawner22" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 8, 8, -36)
+
+[node name="WorldSpawner23" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 16, 8, -36)
+
+[node name="WorldSpawner24" parent="GameWorld/ArenaA/Spawners" instance=ExtResource("6_3lmtm")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 24, 8, -36)
+
+[node name="Doors" type="Node3D" parent="GameWorld/ArenaA"]
+
+[node name="WorldDoors1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 32)
+
+[node name="WorldDoors2" parent="GameWorld/ArenaA/Doors" instance=ExtResource("5_qvdwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 0)
+
+[node name="WorldBars1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("7_0l532")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 33)
+
+[node name="WorldBars2" parent="GameWorld/ArenaA/Doors" instance=ExtResource("7_0l532")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -33, 0, -4)
+
+[node name="Stuff" type="Node3D" parent="GameWorld"]
+
+[node name="WorldGunPickup" parent="GameWorld/Stuff" instance=ExtResource("14_tgy51")]
+transform = Transform3D(0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, 0.258819, -26.884, 0, 0.433013)
+
+[node name="WorldHealthPickup" parent="GameWorld/Stuff" instance=ExtResource("13_raur3")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -29.116, 0, 0.566987)
+
+[node name="CreatureSpider" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -28, 0, 1)
+play_animation = false
+
+[node name="CreatureSpider2" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(-0.5, 0, 0.866026, 0, 1, 0, -0.866026, 0, -0.5, -27.0829, 1, 0.106346)
+play_animation = false
+
+[node name="CreatureSpider3" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(-2.43044e-08, 0.55602, -0.831169, -1, -4.37114e-08, 0, -3.63315e-08, 0.831169, 0.55602, -28.7914, 0.637534, 0.391563)
+play_animation = false
+
+[node name="CreatureSpider4" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -31, 1, 1)
+play_animation = false
+
+[node name="CreatureSpider5" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.610214, -2.66733e-08, 0.792236, 0.792236, 3.46298e-08, 0.610214, -31, 0.708892, 1.29238)
+play_animation = false
+
+[node name="CreatureSpider6" parent="GameWorld/Stuff" instance=ExtResource("9_tybw6")]
+transform = Transform3D(-4.37114e-08, 1, 0, -0.436566, -1.90829e-08, -0.899672, -0.899672, -3.93259e-08, 0.436566, -31, 1.56706, 0.281552)
+play_animation = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vdd5h")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.5, -0.433013, 0.75, 5.56119e-08, 0.866025, 0.5, -0.866025, -0.25, 0.433013, -26.844, 2, 1.10765)
