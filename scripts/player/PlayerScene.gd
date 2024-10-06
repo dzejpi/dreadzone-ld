@@ -406,21 +406,22 @@ func switch_gun(new_gun):
 
 
 func receive_damage(damage_received):
-	if current_invincibility_countdown <= 0:
-		current_invincibility_countdown = base_invincibility_countdown
-		
-		
-		display_hurt_indicator()
-		player_health -= damage_received
-		
-		player_audio_stream_player_3d.stream = SOUND_HURT
-		player_audio_stream_player_3d.play()
-		
-		if player_health <= 0:
-			player_health = 0
-			toggle_game_over()
+	if global_var.is_player_playing:
+		if current_invincibility_countdown <= 0:
+			current_invincibility_countdown = base_invincibility_countdown
 			
-		health_label.text = str(player_health)
+			
+			display_hurt_indicator()
+			player_health -= damage_received
+			
+			player_audio_stream_player_3d.stream = SOUND_HURT
+			player_audio_stream_player_3d.play()
+			
+			if player_health <= 0:
+				player_health = 0
+				toggle_game_over()
+				
+			health_label.text = str(player_health)
 
 
 func receive_health(health_received):
