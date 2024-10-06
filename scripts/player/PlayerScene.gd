@@ -8,6 +8,12 @@ const JUMP_VELOCITY = 4.5
 @onready var ray_cast = $PlayerHead/Camera/RayCast3D
 @onready var shooting_raycast = $PlayerHead/Camera/ShootingCast
 
+# For shotgun
+@onready var shooting_cast_2: RayCast3D = $PlayerHead/Camera/ShootingCast2
+@onready var shooting_cast_3: RayCast3D = $PlayerHead/Camera/ShootingCast3
+@onready var shooting_cast_4: RayCast3D = $PlayerHead/Camera/ShootingCast4
+@onready var shooting_cast_5: RayCast3D = $PlayerHead/Camera/ShootingCast5
+
 # UI parts
 @onready var game_pause_scene = $PlayerUI/Pause/GamePauseScene
 @onready var game_over_scene = $PlayerUI/GameEnd/GameOverScene
@@ -506,7 +512,108 @@ func fire_weapon():
 					var hit_object = shooting_raycast.get_collider()
 					
 					create_decal(hit_position, hit_normal, "bullet")
-
+		
+		# Multiple shotgun rays
+		if current_gun == 3:
+			if shooting_cast_2.is_colliding():
+				var current_collider = shooting_cast_2.get_collider()
+				if current_collider:
+					var collision_object = shooting_cast_2.get_collider().name
+					
+					if debug:
+						print("Player shot: " + collision_object + ".")
+					
+					if collision_object != "HardSurface":
+						var collision_shape = shooting_cast_2.get_collider().get_node("EnemyCollisionShape")
+						if collision_shape:
+							shooting_cast_2.get_collider().receive_damage(100)
+							
+							var hit_position = shooting_cast_2.get_collision_point()
+							var hit_normal = shooting_cast_2.get_collision_normal()
+							var hit_object = shooting_cast_2.get_collider()
+							
+							create_decal(hit_position, hit_normal, "blood")
+					elif collision_object == "HardSurface":
+						var hit_position = shooting_cast_2.get_collision_point()
+						var hit_normal = shooting_cast_2.get_collision_normal()
+						var hit_object = shooting_cast_2.get_collider()
+						
+						create_decal(hit_position, hit_normal, "bullet")
+				
+			if shooting_cast_3.is_colliding():
+				var current_collider = shooting_cast_3.get_collider()
+				if current_collider:
+					var collision_object = shooting_cast_3.get_collider().name
+					
+					if debug:
+						print("Player shot: " + collision_object + ".")
+					
+					if collision_object != "HardSurface":
+						var collision_shape = shooting_cast_3.get_collider().get_node("EnemyCollisionShape")
+						if collision_shape:
+							shooting_cast_3.get_collider().receive_damage(100)
+							
+							var hit_position = shooting_cast_3.get_collision_point()
+							var hit_normal = shooting_cast_3.get_collision_normal()
+							var hit_object = shooting_cast_3.get_collider()
+							
+							create_decal(hit_position, hit_normal, "blood")
+					elif collision_object == "HardSurface":
+						var hit_position = shooting_cast_3.get_collision_point()
+						var hit_normal = shooting_cast_3.get_collision_normal()
+						var hit_object = shooting_cast_3.get_collider()
+						
+						create_decal(hit_position, hit_normal, "bullet")
+				
+			if shooting_cast_4.is_colliding():
+				var current_collider = shooting_cast_4.get_collider()
+				if current_collider:
+					var collision_object = shooting_cast_4.get_collider().name
+					
+					if debug:
+						print("Player shot: " + collision_object + ".")
+					
+					if collision_object != "HardSurface":
+						var collision_shape = shooting_cast_4.get_collider().get_node("EnemyCollisionShape")
+						if collision_shape:
+							shooting_cast_4.get_collider().receive_damage(100)
+							
+							var hit_position = shooting_cast_4.get_collision_point()
+							var hit_normal = shooting_cast_4.get_collision_normal()
+							var hit_object = shooting_cast_4.get_collider()
+							
+							create_decal(hit_position, hit_normal, "blood")
+					elif collision_object == "HardSurface":
+						var hit_position = shooting_cast_4.get_collision_point()
+						var hit_normal = shooting_cast_4.get_collision_normal()
+						var hit_object = shooting_cast_4.get_collider()
+						
+						create_decal(hit_position, hit_normal, "bullet")
+			if shooting_cast_5.is_colliding():
+				var current_collider = shooting_cast_5.get_collider()
+				if current_collider:
+					var collision_object = shooting_cast_5.get_collider().name
+					
+					if debug:
+						print("Player shot: " + collision_object + ".")
+					
+					if collision_object != "HardSurface":
+						var collision_shape = shooting_cast_5.get_collider().get_node("EnemyCollisionShape")
+						if collision_shape:
+							shooting_cast_5.get_collider().receive_damage(100)
+							
+							var hit_position = shooting_cast_5.get_collision_point()
+							var hit_normal = shooting_cast_5.get_collision_normal()
+							var hit_object = shooting_cast_5.get_collider()
+							
+							create_decal(hit_position, hit_normal, "blood")
+					elif collision_object == "HardSurface":
+						var hit_position = shooting_cast_5.get_collision_point()
+						var hit_normal = shooting_cast_5.get_collision_normal()
+						var hit_object = shooting_cast_5.get_collider()
+						
+						create_decal(hit_position, hit_normal, "bullet")
+				
 
 func set_shooting_countdown():
 	match(current_gun):
