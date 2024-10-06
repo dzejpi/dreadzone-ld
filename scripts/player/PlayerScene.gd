@@ -95,7 +95,7 @@ var current_weapon_switch_countdown = 0
 var base_invincibility_countdown = 2
 var current_invincibility_countdown = 0
 
-var debug = true
+var debug = false
 
 
 func _ready():
