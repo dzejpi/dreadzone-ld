@@ -42,6 +42,8 @@ const JUMP_VELOCITY = 4.5
 
 @onready var damage_indicator: Sprite2D = $PlayerUI/GameUI/DamageIndicator
 
+@onready var creatures_amount_label: Label = $PlayerUI/GameUI/CreaturesAmountLabel
+
 const SOUND_GUNSHOT_A = preload("res://assets/sfx/sound_gunshot_a.mp3")
 const SOUND_GUNSHOT_B = preload("res://assets/sfx/sound_gunshot_b.mp3")
 const SOUND_GUNSHOT_HEAVY = preload("res://assets/sfx/sound_gunshot_heavy.mp3")
@@ -126,6 +128,7 @@ func _ready():
 	game_over_scene.hide()
 	game_won_scene.hide()
 	animation_player.play("idle")
+	global_var.current_enemies_present = 0
 	
 	# Have all weapons available right away
 	if debug:
@@ -138,6 +141,8 @@ func _ready():
 func _process(delta):
 	# Unnecessary for now
 	#process_collisions()
+	
+	creatures_amount_label.text = "Enemies: " + str(global_var.current_enemies_present)
 	
 	# Camera tilting, 0 by default
 	var camera_tilt_target = 0.0

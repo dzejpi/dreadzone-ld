@@ -42,6 +42,11 @@ var current_hurt_countdown = 0
 
 var is_player_hurt = false
 
+var is_dead = false
+
+
+func _ready() -> void:
+	global_var.current_enemies_present += 1
 
 func _process(delta: float) -> void:
 	
@@ -150,9 +155,12 @@ func receive_damage(damage_received):
 
 
 func die():
-	global_var.add_score(get_creature_score())
-	global_var.current_enemies_killed += 1
-	queue_free()
+	if !is_dead:
+		is_dead = true
+		global_var.current_enemies_present -= 1
+		global_var.add_score(get_creature_score())
+		global_var.current_enemies_killed += 1
+		queue_free()
 
 
 func get_creature_score():

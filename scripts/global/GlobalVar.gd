@@ -10,6 +10,8 @@ var current_enemies_killed = 0
 var record_score = 0
 var record_enemies_killed = 0
 
+var current_enemies_present = 0
+
 # Necessary to replace null with a proper preload("res://...")
 var music_game_music = null
 
