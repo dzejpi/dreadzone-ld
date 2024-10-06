@@ -202,7 +202,6 @@ func _process(delta):
 				current_invincibility_countdown = 0
 			
 			damage_indicator.modulate.a = current_invincibility_countdown
-			print("Damage indicator modulate A is: " + str(damage_indicator.modulate.a))
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
