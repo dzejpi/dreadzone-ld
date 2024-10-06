@@ -94,15 +94,15 @@
 		{
 			"bufferView":4,
 			"componentType":5126,
-			"count":108,
+			"count":508,
 			"max":[
 				0.019999995827674866,
-				0.18000000715255737,
+				0.20500001311302185,
 				0
 			],
 			"min":[
 				-0.23508380353450775,
-				0,
+				-0.009999999776482582,
 				-0.8734089732170105
 			],
 			"type":"VEC3"
@@ -110,19 +110,19 @@
 		{
 			"bufferView":5,
 			"componentType":5126,
-			"count":108,
+			"count":508,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":6,
 			"componentType":5126,
-			"count":108,
+			"count":508,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":7,
 			"componentType":5123,
-			"count":264,
+			"count":1272,
 			"type":"SCALAR"
 		}
 	],
@@ -153,32 +153,32 @@
 		},
 		{
 			"buffer":0,
-			"byteLength":1296,
+			"byteLength":6096,
 			"byteOffset":3016,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1296,
-			"byteOffset":4312,
+			"byteLength":6096,
+			"byteOffset":9112,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":864,
-			"byteOffset":5608,
+			"byteLength":4064,
+			"byteOffset":15208,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":528,
-			"byteOffset":6472,
+			"byteLength":2544,
+			"byteOffset":19272,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":7000,
+			"byteLength":21816,
 			"uri":"obj_gun_d_machine_gun.bin"
 		}
 	]
