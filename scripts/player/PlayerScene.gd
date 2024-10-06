@@ -369,15 +369,19 @@ func gain_gun(gun_number):
 		2:
 			# Rifle
 			is_rifle_available = true
+			show_message("Rifle picked!")
 		3:
 			# Shotgun
 			is_shotgun_available = true
+			show_message("Shotgun picked!")
 		4:
 			# Machine gun
 			is_machine_gun_available = true
+			show_message("Machine gun picked!")
 		5:
 			# Minigun
 			is_minigun_available = true
+			show_message("Minigun picked!")
 
 
 func fire_weapon():
