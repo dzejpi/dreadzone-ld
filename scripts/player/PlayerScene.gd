@@ -62,7 +62,7 @@ var shooting_countdown = 0
 
 var pistol_cadence = 0.3
 var rifle_cadence = 0.6
-var shotgun_cadence = 2
+var shotgun_cadence = 1.5
 var machine_gun_cadence = 0.1
 var minigun_cadence = 0.05
 
@@ -421,11 +421,17 @@ func fire_weapon():
 		if debug:
 			print("Shooting")
 		
-		# Disgusting
-		if current_gun < 4:
-			gun_animation_player.play("shoot")
-		else:
-			gun_animation_player.play("shoot_short")
+		match(current_gun):
+			1:
+				gun_animation_player.play("shoot_pistol")
+			2:
+				gun_animation_player.play("shoot_rifle")
+			3:
+				gun_animation_player.play("shoot_shotgun")
+			4:
+				gun_animation_player.play("shoot_machine_gun")
+			4:
+				gun_animation_player.play("shoot_minigun")
 		
 		set_shooting_countdown()
 		show_fire()
