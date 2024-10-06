@@ -134,7 +134,10 @@ offset_top = 64.0
 offset_right = 1216.0
 offset_bottom = 528.0
 theme = ExtResource("8_w4hn0")
-text = "Credits text here."
+text = "Created by DzejPi for Ludum Dare 56.
+I had a blast and hope you blasted some tiny creatures too!
+
+Thank you to everyone who supports me!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
