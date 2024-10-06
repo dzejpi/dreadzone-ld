@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx3n0kgkrgd86"]
+
+[ext_resource type="PackedScene" uid="uid://cn87cdvit7dfe" path="res://assets/obj/guns_obj/obj_gun_c_shotgun.gltf" id="1_bt4nr"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_gie01"]
+
+[node name="ShotgunPickup" instance=ExtResource("1_bt4nr")]
+
+[node name="obj_gun_c_shotgun" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_gie01")
+
+[node name="obj_hand_d" parent="." index="1"]
+visible = false
+surface_material_override/0 = ExtResource("2_gie01")

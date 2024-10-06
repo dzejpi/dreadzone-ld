@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca2bn6ov1mjp1"]
+
+[ext_resource type="PackedScene" uid="uid://12bvar2mj402" path="res://assets/obj/guns_obj/obj_gun_e_minigun.gltf" id="1_1j1sb"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_11jsq"]
+
+[node name="MinigunPickup" instance=ExtResource("1_1j1sb")]
+
+[node name="obj_gun_e_minigun" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_11jsq")
+
+[node name="obj_gun_e_minigun_barrel_a" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_11jsq")
+
+[node name="obj_hand_c" parent="." index="2"]
+visible = false
+surface_material_override/0 = ExtResource("2_11jsq")
+
+[node name="obj_gun_e_minigun_barreL_b" parent="." index="3"]
+surface_material_override/0 = ExtResource("2_11jsq")
+
+[node name="obj_gun_e_minigun_barrel_c" parent="." index="4"]
+surface_material_override/0 = ExtResource("2_11jsq")
+
+[node name="obj_gun_e_minigun_barreL_d" parent="." index="5"]
+surface_material_override/0 = ExtResource("2_11jsq")

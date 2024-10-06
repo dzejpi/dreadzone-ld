@@ -313,3 +313,7 @@ func trigger_arena_d_event(event_triggered):
 
 func heal_player(amount):
 	player_scene.receive_health(amount)
+
+
+func give_player_gun(gun_number):
+	player_scene.gain_gun(gun_number)

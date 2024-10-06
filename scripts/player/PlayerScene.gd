@@ -355,6 +355,22 @@ func show_message(message_text):
 	message_current_countdown = message_base_countdown
 
 
+func gain_gun(gun_number):
+	match(gun_number):
+		2:
+			# Rifle
+			pass
+		3:
+			# Shotgun
+			pass
+		4:
+			# Machine gun
+			pass
+		5:
+			# Minigun
+			pass
+
+
 func fire_weapon():
 	if shooting_countdown <= 0:
 		if debug:

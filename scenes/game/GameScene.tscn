@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dn4i7tal0cmhg"]
+[gd_scene load_steps=21 format=3 uid="uid://dn4i7tal0cmhg"]
 
 [ext_resource type="Script" path="res://scripts/game/GameScene.gd" id="1_kwbbw"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_dck8l"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dc10vmn4wryqw" path="res://scenes/world/WorldCeiling.tscn" id="8_kkj8k"]
 [ext_resource type="PackedScene" uid="uid://bop78aav3qcrv" path="res://scenes/world/WorldGroundC.tscn" id="8_q3m3c"]
 [ext_resource type="PackedScene" uid="uid://dsdp304ho7m2h" path="res://scenes/world/WorldHealthPickup.tscn" id="13_v4pm5"]
+[ext_resource type="PackedScene" uid="uid://c5mk6io7iuibt" path="res://scenes/world/WorldGunPickup.tscn" id="14_3y0bc"]
 [ext_resource type="FontFile" uid="uid://46bshovhdl6w" path="res://assets/fonts/kenney_fontpackage/fonts/kenney_pixel.ttf" id="14_jjq0q"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
@@ -6478,6 +6479,20 @@ outline_size = 0
 
 [node name="WorldHealthPickup" parent="GameWorld/Pickups" instance=ExtResource("13_v4pm5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -59, 0, 2)
+
+[node name="WorldGunPickup2" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+
+[node name="WorldGunPickup3" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+gun_number = 3
+
+[node name="WorldGunPickup4" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+gun_number = 4
+
+[node name="WorldGunPickup5" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 0)
+gun_number = 5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vdd5h")
