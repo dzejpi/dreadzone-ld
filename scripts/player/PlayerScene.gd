@@ -491,6 +491,7 @@ func fire_weapon():
 				gun_animation_player.play("shoot_minigun")
 				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
 				player_audio_stream_player_3d.play()
+				weapon_minigun.turn_barrel()
 		
 		set_shooting_countdown()
 		show_fire()

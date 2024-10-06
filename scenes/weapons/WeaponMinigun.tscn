@@ -1,9 +1,120 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6tfxjew4tatn"]
+[gd_scene load_steps=7 format=3 uid="uid://c6tfxjew4tatn"]
 
 [ext_resource type="PackedScene" uid="uid://12bvar2mj402" path="res://assets/obj/guns_obj/obj_gun_e_minigun.gltf" id="1_ky6y0"]
 [ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_b2oib"]
+[ext_resource type="Script" path="res://scripts/weapons/WeaponMinigun.gd" id="2_g172d"]
+
+[sub_resource type="Animation" id="Animation_4vf5o"]
+resource_name = "turn_barrel"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("obj_gun_e_minigun_barrel_a:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("obj_gun_e_minigun_barreL_b:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.5708)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("obj_gun_e_minigun_barrel_c:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708), Vector3(0, 0, -3.13985)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("obj_gun_e_minigun_barreL_d:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708), Vector3(0, 0, -3.13985)]
+}
+
+[sub_resource type="Animation" id="Animation_e7h60"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("obj_gun_e_minigun_barrel_a:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("obj_gun_e_minigun_barreL_b:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("obj_gun_e_minigun_barrel_c:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("obj_gun_e_minigun_barreL_d:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -1.5708)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfmxy"]
+_data = {
+"RESET": SubResource("Animation_e7h60"),
+"turn_barrel": SubResource("Animation_4vf5o")
+}
 
 [node name="WeaponMinigun" instance=ExtResource("1_ky6y0")]
+script = ExtResource("2_g172d")
 
 [node name="obj_gun_e_minigun" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_b2oib")
@@ -15,10 +126,18 @@ surface_material_override/0 = ExtResource("2_b2oib")
 surface_material_override/0 = ExtResource("2_b2oib")
 
 [node name="obj_gun_e_minigun_barreL_b" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 0.1, -0.22)
 surface_material_override/0 = ExtResource("2_b2oib")
 
 [node name="obj_gun_e_minigun_barrel_c" parent="." index="4"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.1, -0.22)
 surface_material_override/0 = ExtResource("2_b2oib")
 
 [node name="obj_gun_e_minigun_barreL_d" parent="." index="5"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0.1, -0.22)
 surface_material_override/0 = ExtResource("2_b2oib")
+
+[node name="MinigunAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+libraries = {
+"": SubResource("AnimationLibrary_nfmxy")
+}
