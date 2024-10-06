@@ -23,6 +23,8 @@ extends Node3D
 @onready var beginning_arena_c: Area3D = $BeginningArenaC
 @onready var beginning_arena_d: Area3D = $BeginningArenaD
 
+@onready var player_scene: CharacterBody3D = $CharacterBodies/PlayerScene
+
 var is_arena_a_clear = false
 var is_arena_b_clear = false
 var is_arena_c_clear = false
@@ -307,3 +309,7 @@ func trigger_arena_d_event(event_triggered):
 		60:
 			is_arena_d_clear = true
 			d_bars_2.toggle_door()
+
+
+func heal_player(amount):
+	player_scene.receive_health(amount)

@@ -23,6 +23,7 @@ const JUMP_VELOCITY = 4.5
 
 @onready var health_label: Label = $PlayerUI/GameUI/HealthLabel
 @onready var score_label: Label = $PlayerUI/GameUI/ScoreLabel
+@onready var message_label: Label = $PlayerUI/GameUI/MessageLabel
 
 @onready var weapon_pistol_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/PistolFire
 @onready var weapon_rifle_fire: Node3D = $PlayerHead/Camera/PlayerHands/FirePoints/RifleFire
@@ -77,6 +78,9 @@ var gunfire_effect_countdown = 0
 var camera_tilt_amount = 0.1
 var camera_tilt_speed = 5
 
+var message_base_countdown = 2
+var message_current_countdown = 0
+
 var debug = true
 
 
@@ -119,6 +123,18 @@ func _process(delta):
 	score_label.text = str(global_var.current_score)
 	
 	global_var.current_player_position = self.global_transform.origin
+	
+	if message_current_countdown > 0:
+		message_current_countdown -= 1 * delta
+		
+		# Start modulating once 1 or less
+		if message_current_countdown <= 1:
+			
+			# Make sure it's not less than 0 for modulation
+			if message_current_countdown < 0:
+				message_current_countdown = 0
+			
+			message_label.modulate.a = message_current_countdown
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
@@ -321,6 +337,22 @@ func receive_damage(damage_received):
 		toggle_game_over()
 		
 	health_label.text = str(player_health)
+
+
+func receive_health(health_received):
+	player_health += health_received
+	if player_health > 150:
+		player_health = 150
+	
+	health_label.text = str(player_health)
+	show_message("Health picked!")
+
+
+func show_message(message_text):
+	message_label.text = message_text
+	message_label.modulate.a = 1
+	
+	message_current_countdown = message_base_countdown
 
 
 func fire_weapon():

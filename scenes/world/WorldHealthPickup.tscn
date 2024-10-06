@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsdp304ho7m2h"]
+
+[ext_resource type="PackedScene" uid="uid://bwoffy1hskxpd" path="res://assets/obj/world_obj/obj_health_pickup.gltf" id="1_vbcwj"]
+[ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_3t3p8"]
+[ext_resource type="Script" path="res://scripts/world/WorldHealthPickup.gd" id="2_uffx0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41wpu"]
+
+[node name="WorldHealthPickup" instance=ExtResource("1_vbcwj")]
+script = ExtResource("2_uffx0")
+
+[node name="obj_health_pickup" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_3t3p8")
+
+[node name="HealthPickupArea" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HealthPickupArea" index="0"]
+shape = SubResource("BoxShape3D_41wpu")
+
+[connection signal="body_entered" from="HealthPickupArea" to="." method="_on_health_pickup_area_body_entered"]

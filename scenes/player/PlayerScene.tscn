@@ -419,3 +419,13 @@ theme = ExtResource("12_plvxg")
 text = "123456789"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="PlayerUI/GameUI"]
+modulate = Color(1, 1, 1, 0)
+offset_top = 511.0
+offset_right = 1280.0
+offset_bottom = 575.0
+theme = ExtResource("12_plvxg")
+text = "Health picked!"
+horizontal_alignment = 1
+vertical_alignment = 1
