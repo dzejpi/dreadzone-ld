@@ -1,6 +1,7 @@
 extends TextureButton
 
 
+@export var transition_on = true
 var is_button_pressed = false
 
 
@@ -12,5 +13,6 @@ func _process(_delta):
 
 func _on_pressed():
 	is_button_pressed = true
-	transition_overlay.fade_in()
+	if transition_on:
+		transition_overlay.fade_in()
 	global_var.play_sound("select")

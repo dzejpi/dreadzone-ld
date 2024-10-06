@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lidxun3v1u3h"]
+[gd_scene load_steps=11 format=3 uid="uid://lidxun3v1u3h"]
 
 [ext_resource type="Theme" uid="uid://r386d6tfbxnc" path="res://themes/ButtonTheme.tres" id="1_cin34"]
 [ext_resource type="Script" path="res://scripts/game_ui/GameOverScene.gd" id="1_q6blr"]
@@ -9,20 +9,23 @@
 [ext_resource type="Texture2D" uid="uid://bdhyu3xv0bhb5" path="res://assets/sprites/menu_buttons/menu_btn_focused.png" id="5_8ecms"]
 [ext_resource type="Script" path="res://scripts/game_ui/QuitGameButton.gd" id="6_6v2ld"]
 [ext_resource type="Script" path="res://scripts/game_ui/MainMenuButtons.gd" id="7_wl5wd"]
+[ext_resource type="Texture2D" uid="uid://cypb7i6wpwru6" path="res://assets/sprites/game_textures/spr_damage_indicator.png" id="10_htryh"]
 
 [node name="GameOverScene" type="Node2D"]
+z_index = 64
 script = ExtResource("1_q6blr")
 
 [node name="GameOverLabel" type="Label" parent="."]
+offset_top = 62.0
 offset_right = 1280.0
-offset_bottom = 128.0
+offset_bottom = 190.0
 theme = ExtResource("1_cin34")
 text = "Game over!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameOverButtons" type="Node2D" parent="."]
-position = Vector2(640, 486)
+position = Vector2(640, 548)
 
 [node name="QuitGameButton" type="TextureButton" parent="GameOverButtons"]
 offset_left = 32.0
@@ -34,6 +37,7 @@ texture_hover = ExtResource("3_bj0d4")
 texture_disabled = ExtResource("4_ak0xr")
 texture_focused = ExtResource("5_8ecms")
 script = ExtResource("6_6v2ld")
+transition_on = false
 
 [node name="QuiteGameLabel" type="Label" parent="GameOverButtons/QuitGameButton"]
 layout_mode = 0
@@ -54,6 +58,7 @@ texture_hover = ExtResource("3_bj0d4")
 texture_disabled = ExtResource("4_ak0xr")
 texture_focused = ExtResource("5_8ecms")
 script = ExtResource("7_wl5wd")
+transition_on = false
 
 [node name="MainMenuLabel" type="Label" parent="GameOverButtons/MainMenuButtons"]
 layout_mode = 0
@@ -66,9 +71,9 @@ vertical_alignment = 1
 
 [node name="CurrentScore" type="Label" parent="."]
 offset_left = 352.0
-offset_top = 201.0
+offset_top = 263.0
 offset_right = 928.0
-offset_bottom = 237.0
+offset_bottom = 299.0
 theme = ExtResource("1_cin34")
 text = "Current score: 123456789"
 horizontal_alignment = 1
@@ -76,13 +81,17 @@ vertical_alignment = 1
 
 [node name="HighestScore" type="Label" parent="."]
 offset_left = 352.0
-offset_top = 295.0
+offset_top = 357.0
 offset_right = 928.0
-offset_bottom = 331.0
+offset_bottom = 393.0
 theme = ExtResource("1_cin34")
 text = "Highest score: 123456789"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="HurtSprite" type="Sprite2D" parent="."]
+texture = ExtResource("10_htryh")
+centered = false
 
 [connection signal="pressed" from="GameOverButtons/QuitGameButton" to="GameOverButtons/QuitGameButton" method="_on_pressed"]
 [connection signal="pressed" from="GameOverButtons/MainMenuButtons" to="GameOverButtons/MainMenuButtons" method="_on_pressed"]

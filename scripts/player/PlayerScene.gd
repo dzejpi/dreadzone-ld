@@ -356,6 +356,7 @@ func toggle_game_over():
 	is_game_over = true
 	game_over_scene.show()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	transition_overlay.fade_in()
 
 
 func toggle_game_won():
