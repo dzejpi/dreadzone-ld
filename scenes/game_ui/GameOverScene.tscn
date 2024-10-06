@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cypb7i6wpwru6" path="res://assets/sprites/game_textures/spr_damage_indicator.png" id="10_htryh"]
 
 [node name="GameOverScene" type="Node2D"]
+z_index = 64
 script = ExtResource("1_q6blr")
 
 [node name="GameOverLabel" type="Label" parent="."]
