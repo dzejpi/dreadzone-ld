@@ -32,4 +32,5 @@ func _process(delta: float) -> void:
 func _on_gun_pickup_area_body_entered(body: Node3D) -> void:
 	if body.name == "PlayerScene":
 		game_scene.give_player_gun(gun_number)
+		global_var.play_sound("pick_up")
 		queue_free()

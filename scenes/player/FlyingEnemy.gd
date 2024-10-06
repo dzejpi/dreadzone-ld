@@ -3,7 +3,6 @@ extends CharacterBody3D
 
 @export var creature_number = 1
 
-@onready var creature_audio_stream_player_3d: AudioStreamPlayer3D = $CreatureAudioStreamPlayer3D
 @onready var enemy_raycast: RayCast3D = $EnemyRaycast
 
 @onready var creature_firefly: Node3D = $Creatures/CreatureFirefly
@@ -78,8 +77,6 @@ func receive_damage(damage_received):
 func die():
 	global_var.current_score += 20
 	global_var.current_enemies_killed += 1
-	creature_audio_stream_player_3d.stream = SOUND_CREATURE_DYING
-	creature_audio_stream_player_3d.play()
 	
 	queue_free()
 

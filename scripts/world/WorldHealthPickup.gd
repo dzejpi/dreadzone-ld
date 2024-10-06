@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 func _on_health_pickup_area_body_entered(body: Node3D) -> void:
 	if body.name == "PlayerScene":
 		game_scene.heal_player(50)
+		global_var.play_sound("pick_up")
 		queue_free()
