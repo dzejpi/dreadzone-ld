@@ -127,7 +127,7 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 2, 6)
 		110:
 			is_arena_a_clear = true
-		180:
+		150:
 			spawn_gun(4)
 		260:
 			spawn_gun(5)
