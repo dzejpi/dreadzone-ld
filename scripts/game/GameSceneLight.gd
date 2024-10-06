@@ -9,6 +9,13 @@ extends Node3D
 @onready var beginning_arena_a: Area3D = $BeginningArenaA
 
 @onready var player_scene: CharacterBody3D = $CharacterBodies/PlayerScene
+@onready var pickups: Node3D = $GameWorld/Pickups
+@onready var pickup_gun: Node3D = $GameWorld/Pickups/PickupGun
+
+
+const WORLD_GUN_PICKUP = preload("res://scenes/world/WorldGunPickup.tscn")
+const WORLD_HEALTH_PICKUP = preload("res://scenes/world/WorldHealthPickup.tscn")
+
 
 var is_arena_a_clear = false
 
@@ -96,8 +103,10 @@ func manage_arena_a_events(delta):
 func trigger_arena_a_event(event_triggered):
 	match(event_triggered):
 		5:
+			spawn_health()
 			spawn_on_nth("a", 8, 2)
-		10:
+		30:
+			spawn_gun(2)
 			spawn_on_nth("a", 4, 2)
 		20:
 			spawn_on_nth("a", 4, 6)
@@ -105,9 +114,23 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 4, 6)
 		40:
 			spawn_on_nth("a", 2, 6)
-		60:
+		65:
+			spawn_on_nth("a", 8, 2)
+		70:
+			spawn_on_nth("a", 4, 2)
+		80:
+			spawn_on_nth("a", 4, 6)
+		90:
+			spawn_gun(3)
+			spawn_on_nth("a", 4, 6)
+		100:
+			spawn_on_nth("a", 2, 6)
+		110:
 			is_arena_a_clear = true
-			a_bars_2.toggle_door()
+		180:
+			spawn_gun(4)
+		260:
+			spawn_gun(5)
 
 
 func heal_player(amount):
@@ -116,3 +139,14 @@ func heal_player(amount):
 
 func give_player_gun(gun_number):
 	player_scene.gain_gun(gun_number)
+
+
+func spawn_health():
+	var new_health = WORLD_HEALTH_PICKUP.instantiate()
+	pickups.add_child(new_health)
+
+
+func spawn_gun(gun_number):
+	var new_gun_pickup = WORLD_GUN_PICKUP.instantiate()
+	pickup_gun.add_child(new_gun_pickup)
+	new_gun_pickup.set_gun(gun_number)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dhds5jcdiahml"]
+[gd_scene load_steps=17 format=3 uid="uid://dhds5jcdiahml"]
 
 [ext_resource type="Script" path="res://scripts/game/GameSceneLight.gd" id="1_2buu2"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_r5s6g"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://2sbmksk01i4b" path="res://scenes/world/WorldGroundB.tscn" id="8_kxpnp"]
 [ext_resource type="PackedScene" uid="uid://dc10vmn4wryqw" path="res://scenes/world/WorldCeiling.tscn" id="11_tikoj"]
 [ext_resource type="FontFile" uid="uid://46bshovhdl6w" path="res://assets/fonts/kenney_fontpackage/fonts/kenney_pixel.ttf" id="12_d8x7a"]
-[ext_resource type="PackedScene" uid="uid://c5mk6io7iuibt" path="res://scenes/world/WorldGunPickup.tscn" id="14_4ocup"]
 [ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="15_8ukxv"]
 [ext_resource type="PackedScene" uid="uid://b8tc7q5tq6x8m" path="res://scenes/player/PlayerScene.tscn" id="16_i7at4"]
 
@@ -30,7 +29,7 @@ ambient_light_sky_contribution = 0.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_k884e"]
 size = Vector3(10, 3, 1)
 
-[node name="GameScene" type="Node3D"]
+[node name="GameSceneLight" type="Node3D"]
 script = ExtResource("1_2buu2")
 
 [node name="GameWorld" type="Node3D" parent="."]
@@ -1449,7 +1448,8 @@ outline_size = 0
 
 [node name="Pickups" type="Node3D" parent="GameWorld"]
 
-[node name="WorldGunPickup2" parent="GameWorld/Pickups" instance=ExtResource("14_4ocup")]
+[node name="PickupGun" type="Node3D" parent="GameWorld/Pickups"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vdd5h")

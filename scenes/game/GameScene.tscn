@@ -6504,17 +6504,19 @@ transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -1, 8, 6
 [node name="WorldHealthPickup9" parent="GameWorld/Pickups" instance=ExtResource("13_v4pm5")]
 transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, 0, 8, 65)
 
-[node name="WorldGunPickup2" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+[node name="PickupGun" type="Node3D" parent="GameWorld/Pickups"]
 
-[node name="WorldGunPickup3" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+[node name="WorldGunPickup2" parent="GameWorld/Pickups/PickupGun" instance=ExtResource("14_3y0bc")]
+
+[node name="WorldGunPickup3" parent="GameWorld/Pickups/PickupGun" instance=ExtResource("14_3y0bc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, 2)
 gun_number = 3
 
-[node name="WorldGunPickup4" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+[node name="WorldGunPickup4" parent="GameWorld/Pickups/PickupGun" instance=ExtResource("14_3y0bc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -266, 0, 2)
 gun_number = 4
 
-[node name="WorldGunPickup5" parent="GameWorld/Pickups" instance=ExtResource("14_3y0bc")]
+[node name="WorldGunPickup5" parent="GameWorld/Pickups/PickupGun" instance=ExtResource("14_3y0bc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223, 0, 86)
 gun_number = 5
 
