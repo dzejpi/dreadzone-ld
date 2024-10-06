@@ -11,7 +11,7 @@ extends CharacterBody3D
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var creature_speed = 1
+var creature_speed = 4
 var is_following_player = true
 
 var health = 100
@@ -32,8 +32,6 @@ func _process(delta: float) -> void:
 		if current_collider:
 			var collision_object = enemy_raycast.get_collider().name
 			if collision_object == "PlayerScene":
-				print("Enemy is looking at player")
-				
 				if damage_coutdown <= 0:
 					enemy_raycast.get_collider().receive_damage(10)
 					damage_coutdown = base_damage_countdown
@@ -45,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta * 8
 	
 	if is_following_player:
-		look_at(global_var.current_player_position)
+		look_at(global_var.current_player_position + Vector3(0, 0.2, 0))
 		velocity = transform.basis.z * -creature_speed
 	else:
 		velocity.z = 0
