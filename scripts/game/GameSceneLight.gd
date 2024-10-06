@@ -92,12 +92,13 @@ func turn_all_spawners_off(which_spawner):
 
 
 func manage_arena_a_events(delta):
-	elapsed_time_a += delta
-	
-	if trigger_time_a != int(elapsed_time_a):
-		trigger_time_a = int(elapsed_time_a)
-		trigger_arena_a_event(trigger_time_a)
-		print("A trigger time: " + str(trigger_time_a))
+	if global_var.is_player_playing:
+		elapsed_time_a += delta
+		
+		if trigger_time_a != int(elapsed_time_a):
+			trigger_time_a = int(elapsed_time_a)
+			trigger_arena_a_event(trigger_time_a)
+			print("A trigger time: " + str(trigger_time_a))
 
 
 func trigger_arena_a_event(event_triggered):
