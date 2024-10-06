@@ -191,7 +191,7 @@ func _process(delta):
 	
 	
 	# Update pause state if the user clicks on Continue
-	score_label.text = str(global_var.current_score)
+	score_label.text = "Your score: " + str(global_var.current_score)
 	
 	global_var.current_player_position = self.global_transform.origin
 	
