@@ -10,19 +10,6 @@ extends Node3D
 @onready var shotgun_pickup: Node3D = $ShotgunPickup
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	match(gun_number):
-		2:
-			rifle_pickup.show()
-		3:
-			shotgun_pickup.show()
-		4:
-			machine_gun_pickup.show()
-		5:
-			minigun_pickup.show()
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
