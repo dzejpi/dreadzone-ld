@@ -61,7 +61,7 @@ func _process(delta: float) -> void:
 		if current_collider:
 			var collision_object = enemy_raycast.get_collider().name
 			if collision_object == "PlayerScene":
-				print("Enemy is looking at player")
+				#print("Enemy is looking at player")
 				
 				if damage_coutdown <= 0:
 					enemy_raycast.get_collider().receive_damage(10)

@@ -98,7 +98,7 @@ func manage_arena_a_events(delta):
 		if trigger_time_a != int(elapsed_time_a):
 			trigger_time_a = int(elapsed_time_a)
 			trigger_arena_a_event(trigger_time_a)
-			print("A trigger time: " + str(trigger_time_a))
+			#print("A trigger time: " + str(trigger_time_a))
 
 
 func trigger_arena_a_event(event_triggered):
@@ -149,8 +149,6 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 2, 6)
 		200:
 			spawn_on_nth("a", 2, 4)
-		220:
-			spawn_on_nth("a", 1, 2)
 		240:
 			spawn_on_nth("a", 2, 4)
 		260:
