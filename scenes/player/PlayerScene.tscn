@@ -604,3 +604,5 @@ theme = ExtResource("12_plvxg")
 text = "Health picked!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PlayerAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

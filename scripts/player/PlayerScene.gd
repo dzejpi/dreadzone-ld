@@ -36,6 +36,12 @@ const JUMP_VELOCITY = 4.5
 
 @onready var damage_indicator: Sprite2D = $PlayerUI/GameUI/DamageIndicator
 
+const SOUND_GUNSHOT_A = preload("res://assets/sfx/sound_gunshot_a.mp3")
+const SOUND_GUNSHOT_B = preload("res://assets/sfx/sound_gunshot_b.mp3")
+const SOUND_GUNSHOT_HEAVY = preload("res://assets/sfx/sound_gunshot_heavy.mp3")
+
+@onready var player_audio_stream_player_3d: AudioStreamPlayer3D = $PlayerAudioStreamPlayer3D
+
 @export var is_fov_dynamic = true
 
 const BLOOD_DECAL = preload("res://scenes/decals/BloodDecal.tscn")
@@ -95,7 +101,7 @@ var current_weapon_switch_countdown = 0
 var base_invincibility_countdown = 2
 var current_invincibility_countdown = 0
 
-var debug = false
+var debug = true
 
 
 func _ready():
@@ -443,14 +449,24 @@ func fire_weapon():
 		match(current_gun):
 			1:
 				gun_animation_player.play("shoot_pistol")
+				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
+				player_audio_stream_player_3d.play()
 			2:
 				gun_animation_player.play("shoot_rifle")
+				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
+				player_audio_stream_player_3d.play()
 			3:
 				gun_animation_player.play("shoot_shotgun")
+				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_HEAVY
+				player_audio_stream_player_3d.play()
 			4:
 				gun_animation_player.play("shoot_machine_gun")
+				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
+				player_audio_stream_player_3d.play()
 			4:
 				gun_animation_player.play("shoot_minigun")
+				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
+				player_audio_stream_player_3d.play()
 		
 		set_shooting_countdown()
 		show_fire()

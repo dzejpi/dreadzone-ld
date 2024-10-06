@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 @export var creature_number = 4
 
+@onready var creature_audio_stream_player_3d: AudioStreamPlayer3D = $CreatureAudioStreamPlayer3D
 @onready var enemy_raycast: RayCast3D = $EnemyRaycast
 
 @onready var creature_rat: Node3D = $Creatures/CreatureRat
@@ -11,6 +12,7 @@ extends CharacterBody3D
 @onready var creature_spider: Node3D = $Creatures/CreatureSpider
 
 const JUMP_VELOCITY = 5
+const SOUND_CREATURE_DYING = preload("res://assets/sfx/sound_creature_dying.mp3")
 
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -144,7 +146,8 @@ func receive_damage(damage_received):
 func die():
 	global_var.current_score += 20
 	global_var.current_enemies_killed += 1
-	
+	creature_audio_stream_player_3d.stream = SOUND_CREATURE_DYING
+	creature_audio_stream_player_3d.play()
 	queue_free()
 
 
