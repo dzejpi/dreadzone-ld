@@ -91,6 +91,9 @@ var is_new_weapon_displayed = false
 var base_weapon_switch_countdown = 1
 var current_weapon_switch_countdown = 0
 
+var base_invincibility_countdown = 2
+var current_invincibility_countdown = 0
+
 var debug = true
 
 
@@ -187,6 +190,9 @@ func _process(delta):
 				message_current_countdown = 0
 			
 			message_label.modulate.a = message_current_countdown
+	
+	if current_invincibility_countdown > 0:
+		current_invincibility_countdown -= 1 * delta
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
@@ -372,12 +378,16 @@ func switch_gun(new_gun):
 
 
 func receive_damage(damage_received):
-	player_health -= damage_received
-	if player_health <= 0:
-		player_health = 0
-		toggle_game_over()
+	if current_invincibility_countdown <= 0:
+		current_invincibility_countdown = base_invincibility_countdown
 		
-	health_label.text = str(player_health)
+		#display_hurt_indicator()
+		player_health -= damage_received
+		if player_health <= 0:
+			player_health = 0
+			toggle_game_over()
+			
+		health_label.text = str(player_health)
 
 
 func receive_health(health_received):
