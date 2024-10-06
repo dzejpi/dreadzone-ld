@@ -1,9 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cumy1takrq4q0"]
+[gd_scene load_steps=6 format=3 uid="uid://cumy1takrq4q0"]
 
 [ext_resource type="PackedScene" uid="uid://d2ywjxl1oshc2" path="res://assets/obj/creatures_obj/obj_slug.gltf" id="1_emnjn"]
 [ext_resource type="Material" uid="uid://ceugjpx2i558v" path="res://materials/world_material.tres" id="2_31hd7"]
+[ext_resource type="Script" path="res://scripts/creatures/CreatureSlug.gd" id="2_q3fkv"]
+
+[sub_resource type="Animation" id="Animation_hh2yr"]
+resource_name = "walking"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_udx8j"]
+_data = {
+"walking": SubResource("Animation_hh2yr")
+}
 
 [node name="CreatureSlug" instance=ExtResource("1_emnjn")]
+script = ExtResource("2_q3fkv")
 
 [node name="obj_slug_body" parent="." index="0"]
 surface_material_override/0 = ExtResource("2_31hd7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+"": SubResource("AnimationLibrary_udx8j")
+}
