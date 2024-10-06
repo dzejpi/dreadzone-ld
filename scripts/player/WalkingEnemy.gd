@@ -143,7 +143,7 @@ func receive_damage(damage_received):
 
 
 func die():
-	global_var.add_score(20)
+	global_var.add_score(get_creature_score())
 	global_var.current_enemies_killed += 1
 	queue_free()
 

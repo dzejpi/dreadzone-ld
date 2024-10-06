@@ -81,11 +81,11 @@ var shotgun_cadence = 1.5
 var machine_gun_cadence = 0.1
 var minigun_cadence = 0.05
 
-var pistol_damage = 10
-var rifle_damage = 20
-var shotgun_damage = 30
-var machine_damage = 20
-var minigun_damage = 20
+var pistol_damage = 25
+var rifle_damage = 100
+var shotgun_damage = 100
+var machine_damage = 50
+var minigun_damage = 50
 
 var is_rifle_available = false
 var is_shotgun_available = false
@@ -108,6 +108,8 @@ var current_weapon_switch_countdown = 0
 
 var base_invincibility_countdown = 2
 var current_invincibility_countdown = 0
+
+var gun_damage = 25
 
 var debug = false
 
@@ -396,6 +398,8 @@ func switch_gun(new_gun):
 	if current_gun != new_gun:
 		current_gun = new_gun
 		
+		set_current_damage()
+		
 		player_audio_stream_player_3d.stream = SOUND_WEAPON_CHANGE
 		player_audio_stream_player_3d.play()
 		
@@ -502,7 +506,7 @@ func fire_weapon():
 				if collision_object != "HardSurface":
 					var collision_shape = shooting_raycast.get_collider().get_node("EnemyCollisionShape")
 					if collision_shape:
-						shooting_raycast.get_collider().receive_damage(100)
+						shooting_raycast.get_collider().receive_damage(gun_damage)
 						
 						var hit_position = shooting_raycast.get_collision_point()
 						var hit_normal = shooting_raycast.get_collision_normal()
@@ -529,7 +533,7 @@ func fire_weapon():
 					if collision_object != "HardSurface":
 						var collision_shape = shooting_cast_2.get_collider().get_node("EnemyCollisionShape")
 						if collision_shape:
-							shooting_cast_2.get_collider().receive_damage(100)
+							shooting_cast_2.get_collider().receive_damage(gun_damage)
 							
 							var hit_position = shooting_cast_2.get_collision_point()
 							var hit_normal = shooting_cast_2.get_collision_normal()
@@ -554,7 +558,7 @@ func fire_weapon():
 					if collision_object != "HardSurface":
 						var collision_shape = shooting_cast_3.get_collider().get_node("EnemyCollisionShape")
 						if collision_shape:
-							shooting_cast_3.get_collider().receive_damage(100)
+							shooting_cast_3.get_collider().receive_damage(gun_damage)
 							
 							var hit_position = shooting_cast_3.get_collision_point()
 							var hit_normal = shooting_cast_3.get_collision_normal()
@@ -579,7 +583,7 @@ func fire_weapon():
 					if collision_object != "HardSurface":
 						var collision_shape = shooting_cast_4.get_collider().get_node("EnemyCollisionShape")
 						if collision_shape:
-							shooting_cast_4.get_collider().receive_damage(100)
+							shooting_cast_4.get_collider().receive_damage(gun_damage)
 							
 							var hit_position = shooting_cast_4.get_collision_point()
 							var hit_normal = shooting_cast_4.get_collision_normal()
@@ -603,7 +607,7 @@ func fire_weapon():
 					if collision_object != "HardSurface":
 						var collision_shape = shooting_cast_5.get_collider().get_node("EnemyCollisionShape")
 						if collision_shape:
-							shooting_cast_5.get_collider().receive_damage(100)
+							shooting_cast_5.get_collider().receive_damage(gun_damage)
 							
 							var hit_position = shooting_cast_5.get_collision_point()
 							var hit_normal = shooting_cast_5.get_collision_normal()
@@ -632,18 +636,18 @@ func set_shooting_countdown():
 			shooting_countdown = minigun_cadence
 
 
-func get_current_damage():
+func set_current_damage():
 	match(current_gun):
 		1:
-			return pistol_damage
+			gun_damage = pistol_damage
 		2:
-			return rifle_damage
+			gun_damage = rifle_damage
 		3:
-			return shotgun_damage
+			gun_damage = shotgun_damage
 		4:
-			return machine_damage
+			gun_damage = machine_damage
 		5:
-			return minigun_damage
+			gun_damage = minigun_damage
 
 
 func create_decal(position: Vector3, normal: Vector3, decal_type: String):
