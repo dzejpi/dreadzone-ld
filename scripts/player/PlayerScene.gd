@@ -257,6 +257,29 @@ func _input(event):
 			if is_minigun_available:
 				switch_gun(5)
 		
+		if Input.is_action_just_released("scroll_down"):
+			# Scrolling is sensitive, scroll only when finished switching
+			if current_weapon_switch_countdown <= 0:
+				var current_gun_number = current_gun
+				
+				if current_gun_number <= 1:
+					current_gun_number = 5
+				else:
+					current_gun_number -= 1
+				
+				switch_gun(current_gun_number)
+		
+		if Input.is_action_just_released("scroll_up"):
+			if current_weapon_switch_countdown <= 0:
+				var current_gun_number = current_gun
+				
+				if current_gun_number >= 5:
+					current_gun_number = 1
+				else:
+					current_gun_number += 1
+				
+				switch_gun(current_gun_number)
+		
 		# Autofire for now. Might differentiate later non-automatic guns. 
 		if Input.is_action_pressed("gun_shoot"):
 			if !is_switching_weapon:
@@ -395,19 +418,40 @@ func change_fov(new_fov):
 
 
 func switch_gun(new_gun):
-	if current_gun != new_gun:
-		current_gun = new_gun
-		
-		set_current_damage()
-		
-		player_audio_stream_player_3d.stream = SOUND_WEAPON_CHANGE
-		player_audio_stream_player_3d.play()
-		
-		animation_player.play("weapon_change")
-		
-		is_switching_weapon = true
-		is_new_weapon_displayed = false
-		current_weapon_switch_countdown = base_weapon_switch_countdown
+	
+	var switch_protection = false
+	
+	match(new_gun):
+		1:
+			# Pistol always available
+			switch_protection = true
+		2:
+			if is_rifle_available:
+				switch_protection = true
+		3:
+			if is_shotgun_available:
+				switch_protection = true
+		4:
+			if is_machine_gun_available:
+				switch_protection = true
+		5:
+			if is_minigun_available:
+				switch_protection = true
+	
+	if switch_protection:
+		if current_gun != new_gun:
+			current_gun = new_gun
+			
+			set_current_damage()
+			
+			player_audio_stream_player_3d.stream = SOUND_WEAPON_CHANGE
+			player_audio_stream_player_3d.play()
+			
+			animation_player.play("weapon_change")
+			
+			is_switching_weapon = true
+			is_new_weapon_displayed = false
+			current_weapon_switch_countdown = base_weapon_switch_countdown
 
 
 func receive_damage(damage_received):
