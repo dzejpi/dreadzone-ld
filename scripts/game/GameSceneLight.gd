@@ -120,7 +120,7 @@ func trigger_arena_a_event(event_triggered):
 		65:
 			spawn_on_nth("a", 8, 2)
 		70:
-			spawn_on_nth("a", 4, 2)
+			spawn_on_nth("a", 4, 4)
 		80:
 			spawn_on_nth("a", 4, 6)
 		90:
@@ -132,9 +132,9 @@ func trigger_arena_a_event(event_triggered):
 			spawn_health()
 			spawn_on_nth("a", 1, 2)
 		120:
-			spawn_on_nth("a", 1, 2)
+			spawn_on_nth("a", 1, 4)
 		130:
-			spawn_on_nth("a", 1, 2)
+			spawn_on_nth("a", 1, 6)
 		140:
 			spawn_on_nth("a", 1, 2)
 		150:
@@ -143,14 +143,14 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 2, 6)
 		180:
 			spawn_health()
-			spawn_on_nth("a", 2, 6)
+			spawn_on_nth("a", 2, 4)
 		190:
 			spawn_health()
 			spawn_on_nth("a", 2, 6)
 		200:
 			spawn_on_nth("a", 2, 4)
 		220:
-			spawn_on_nth("a", 1, 4)
+			spawn_on_nth("a", 1, 2)
 		240:
 			spawn_on_nth("a", 2, 4)
 		260:
@@ -159,7 +159,7 @@ func trigger_arena_a_event(event_triggered):
 			turn_all_spawners_on("a", 6)
 		300:
 			turn_all_spawners_off("a")
-			spawn_on_nth("a", 1, 1)
+			spawn_on_nth("a", 1, 2)
 		320:
 			turn_all_spawners_on("a", 6)
 
