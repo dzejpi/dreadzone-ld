@@ -30,6 +30,12 @@ var rat_score = 10
 var slug_score = 10
 var spider_score = 100
 
+# For some reason looks better with 0.8
+var hurt_base_countdown = 0.8
+var current_hurt_countdown = 0
+
+var is_player_hurt = false
+
 
 func _process(delta: float) -> void:
 	
@@ -49,6 +55,8 @@ func _process(delta: float) -> void:
 				if damage_coutdown <= 0:
 					enemy_raycast.get_collider().receive_damage(10)
 					damage_coutdown = base_damage_countdown
+					current_hurt_countdown = hurt_base_countdown
+					is_player_hurt = true
 
 
 func _physics_process(delta: float) -> void:
@@ -65,25 +73,36 @@ func _physics_process(delta: float) -> void:
 		self.rotation.x = 0
 		self.rotation.z = 0
 		
-		# Move forward, properly normalized
-		var direction = -global_transform.basis.z.normalized()
-		velocity.x = direction.x * creature_speed
-		velocity.z = direction.z * creature_speed
+		# If player hurt, kickback. Otherwise move forward
+		if current_hurt_countdown > 0:
+			current_hurt_countdown -= 1 * delta
+			var direction = -global_transform.basis.z.normalized()
+			velocity.x = direction.x * creature_speed * -1
+			velocity.z = direction.z * creature_speed * -1
+			# Jump once:
+			if !is_player_hurt:
+				is_player_hurt = false
+				velocity.y = JUMP_VELOCITY
+		else:
+			var direction = -global_transform.basis.z.normalized()
+			velocity.x = direction.x * creature_speed
+			velocity.z = direction.z * creature_speed
 		
 		# Jump at player if within the distance
 		var distance
 		distance = global_transform.origin.distance_to(global_var.current_player_position)
 		
-		if creature_number == 2 and current_jump_countdown <= 0:
-			current_jump_countdown = base_jump_countdown / 2
-			# Jump
-			velocity.y = JUMP_VELOCITY
-		
-		if distance < 3:
-			if current_jump_countdown <= 0:
-				current_jump_countdown = base_jump_countdown
+		if current_hurt_countdown <= 0:
+			if creature_number == 2 and current_jump_countdown <= 0:
+				current_jump_countdown = base_jump_countdown / 2
 				# Jump
 				velocity.y = JUMP_VELOCITY
+			
+			if distance < 3:
+				if current_jump_countdown <= 0:
+					current_jump_countdown = base_jump_countdown
+					# Jump
+					velocity.y = JUMP_VELOCITY
 	else:
 		velocity.z = 0
 	
