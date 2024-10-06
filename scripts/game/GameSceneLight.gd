@@ -182,4 +182,4 @@ func spawn_gun(gun_number):
 	var new_gun_pickup = WORLD_GUN_PICKUP.instantiate()
 	pickup_gun.add_child(new_gun_pickup)
 	new_gun_pickup.set_gun(gun_number)
-	player_scene.show_message("Health dropped!")
+	player_scene.show_message("New gun dropped!")
