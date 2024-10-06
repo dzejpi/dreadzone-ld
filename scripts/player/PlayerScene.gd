@@ -39,6 +39,7 @@ const JUMP_VELOCITY = 4.5
 const SOUND_GUNSHOT_A = preload("res://assets/sfx/sound_gunshot_a.mp3")
 const SOUND_GUNSHOT_B = preload("res://assets/sfx/sound_gunshot_b.mp3")
 const SOUND_GUNSHOT_HEAVY = preload("res://assets/sfx/sound_gunshot_heavy.mp3")
+const SOUND_HURT = preload("res://assets/sfx/sound_hurt.mp3")
 
 @onready var player_audio_stream_player_3d: AudioStreamPlayer3D = $PlayerAudioStreamPlayer3D
 
@@ -396,8 +397,13 @@ func receive_damage(damage_received):
 	if current_invincibility_countdown <= 0:
 		current_invincibility_countdown = base_invincibility_countdown
 		
+		
 		display_hurt_indicator()
 		player_health -= damage_received
+		
+		player_audio_stream_player_3d.stream = SOUND_HURT
+		player_audio_stream_player_3d.play()
+		
 		if player_health <= 0:
 			player_health = 0
 			toggle_game_over()
