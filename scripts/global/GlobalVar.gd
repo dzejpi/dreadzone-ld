@@ -25,6 +25,8 @@ var current_player_position = Vector3()
 
 var is_player_playing = true
 
+var enemy_speed_multiplier = 1
+
 
 func play_music():
 	music_node.stream = MUSIC_DREADZONE

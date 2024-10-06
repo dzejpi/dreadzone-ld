@@ -117,6 +117,7 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 2, 6)
 		60:
 			spawn_health()
+			global_var.enemy_speed_multiplier = 1.2
 		65:
 			spawn_on_nth("a", 8, 2)
 		70:
@@ -125,6 +126,7 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 4, 6)
 		90:
 			spawn_gun(3)
+			global_var.enemy_speed_multiplier = 1.3
 			spawn_on_nth("a", 4, 6)
 		100:
 			spawn_on_nth("a", 1, 2)
@@ -133,6 +135,7 @@ func trigger_arena_a_event(event_triggered):
 			spawn_on_nth("a", 1, 2)
 		120:
 			spawn_on_nth("a", 1, 4)
+			global_var.enemy_speed_multiplier = 1.4
 		130:
 			spawn_on_nth("a", 1, 6)
 		140:
@@ -155,10 +158,15 @@ func trigger_arena_a_event(event_triggered):
 			spawn_gun(5)
 		270:
 			turn_all_spawners_on("a", 6)
+			global_var.enemy_speed_multiplier = 1.5
 		300:
 			turn_all_spawners_off("a")
 			spawn_on_nth("a", 1, 2)
 		320:
+			global_var.enemy_speed_multiplier = 2
+			turn_all_spawners_on("a", 6)
+		400:
+			global_var.enemy_speed_multiplier = 4
 			turn_all_spawners_on("a", 6)
 
 

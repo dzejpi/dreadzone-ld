@@ -88,16 +88,16 @@ func _physics_process(delta: float) -> void:
 		if current_hurt_countdown > 0:
 			current_hurt_countdown -= 1 * delta
 			var direction = -global_transform.basis.z.normalized()
-			velocity.x = direction.x * creature_speed * -1
-			velocity.z = direction.z * creature_speed * -1
+			velocity.x = direction.x * creature_speed * -1 * global_var.enemy_speed_multiplier
+			velocity.z = direction.z * creature_speed * -1 * global_var.enemy_speed_multiplier
 			# Jump once:
 			if !is_player_hurt:
 				is_player_hurt = false
 				velocity.y = JUMP_VELOCITY
 		else:
 			var direction = -global_transform.basis.z.normalized()
-			velocity.x = direction.x * creature_speed
-			velocity.z = direction.z * creature_speed
+			velocity.x = direction.x * creature_speed * global_var.enemy_speed_multiplier
+			velocity.z = direction.z * creature_speed * global_var.enemy_speed_multiplier
 		
 		# Jump at player if within the distance
 		var distance
