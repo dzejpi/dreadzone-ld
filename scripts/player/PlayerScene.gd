@@ -72,6 +72,11 @@ var shotgun_damage = 30
 var machine_damage = 20
 var minigun_damage = 20
 
+var is_rifle_available = false
+var is_shotgun_available = false
+var is_machine_gun_available = false
+var is_minigun_available = false
+
 var base_gunfire_effect_countdown = 0.1
 var gunfire_effect_countdown = 0
 
@@ -169,16 +174,20 @@ func _input(event):
 			switch_gun(1)
 		
 		if Input.is_action_just_pressed("gun_b"):
-			switch_gun(2)
+			if is_rifle_available:
+				switch_gun(2)
 		
 		if Input.is_action_just_pressed("gun_c"):
-			switch_gun(3)
+			if is_shotgun_available:
+				switch_gun(3)
 		
 		if Input.is_action_just_pressed("gun_d"):
-			switch_gun(4)
+			if is_machine_gun_available:
+				switch_gun(4)
 		
 		if Input.is_action_just_pressed("gun_e"):
-			switch_gun(5)
+			if is_minigun_available:
+				switch_gun(5)
 		
 		# Autofire for now. Might differentiate later non-automatic guns. 
 		if Input.is_action_pressed("gun_shoot"):
@@ -359,16 +368,16 @@ func gain_gun(gun_number):
 	match(gun_number):
 		2:
 			# Rifle
-			pass
+			is_rifle_available = true
 		3:
 			# Shotgun
-			pass
+			is_shotgun_available = true
 		4:
 			# Machine gun
-			pass
+			is_machine_gun_available = true
 		5:
 			# Minigun
-			pass
+			is_minigun_available = true
 
 
 func fire_weapon():
