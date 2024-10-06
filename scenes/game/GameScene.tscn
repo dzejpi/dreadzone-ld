@@ -880,7 +880,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 28, 0, 3
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -32, 0, 28)
 
 [node name="WorldWall2" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -4)
 
 [node name="WorldWall3" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -8)
@@ -916,7 +916,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 8)
 
 [node name="WorldWall30" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 4)
 
 [node name="WorldWall31" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -32)
@@ -1003,10 +1003,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0,
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -4)
 
 [node name="WorldWall91" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 32)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 31)
 
 [node name="WorldWall92" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 32)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 31)
 
 [node name="WorldWall93" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 32)
@@ -1036,7 +1036,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16, 0, 32)
 
 [node name="WorldWall118" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 32)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 31)
 
 [node name="WorldWallSlant5" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_eo84c")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28, 8, -32)
@@ -1183,7 +1183,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 8,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 8, 32)
 
 [node name="WorldWall119" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 32)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 31)
 
 [node name="WorldDoors" parent="GameWorld/ArenaA/Walls" instance=ExtResource("6_0ir5k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, -20)
@@ -1298,10 +1298,10 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 24, 8, -
 [node name="Doors" type="Node3D" parent="GameWorld/ArenaA"]
 
 [node name="WorldDoors1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("6_0ir5k")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 33)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 32)
 
 [node name="WorldDoors2" parent="GameWorld/ArenaA/Doors" instance=ExtResource("6_0ir5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 0)
 
 [node name="WorldBars1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("7_s8ci2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 33)
@@ -2579,13 +2579,13 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -52, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -8)
 
 [node name="WorldWall2" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, -4)
 
 [node name="WorldWall5" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 8)
 
 [node name="WorldWall73" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 0, 4)
 
 [node name="WorldWall6" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 12)
@@ -2594,10 +2594,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, -8)
 
 [node name="WorldWall46" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 0, -4)
 
 [node name="WorldWall48" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 0, 4)
 
 [node name="WorldWall49" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 0, 8)
@@ -2825,16 +2825,16 @@ transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -52, 8, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, -8)
 
 [node name="WorldWall4" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 8, -4)
 
 [node name="WorldWall121" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 8, 0)
 
 [node name="WorldWall47" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, 8)
 
 [node name="WorldWall74" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 8, 4)
 
 [node name="WorldWall75" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, 12)
@@ -2843,13 +2843,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 8, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 8, -8)
 
 [node name="WorldWall77" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 8, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 8, -4)
 
 [node name="WorldWall78" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 8, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 8, 4)
 
 [node name="WorldWall122" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79, 8, 0)
 
 [node name="WorldWall79" parent="GameWorld/ArenaB/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80, 8, 8)
@@ -3829,13 +3829,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -311, 0, 120)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 76)
 
 [node name="WorldWall14" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 80)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255, 0, 80)
 
 [node name="WorldWall16" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 88)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255, 0, 88)
 
 [node name="WorldWall48" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 8, 84)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -255, 8, 84)
 
 [node name="WorldWall17" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -254, 0, 92)
@@ -3868,7 +3868,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -287, 
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -291, 0, 68)
 
 [node name="WorldWall31" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -279, 0, 68)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -279, 0, 69)
 
 [node name="WorldWall32" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -283, 0, 68)
@@ -3880,7 +3880,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -267, 
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -263, 0, 68)
 
 [node name="WorldWall34" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -271, 0, 68)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -271, 0, 69)
 
 [node name="WorldWall27" parent="GameWorld/ArenaC/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -295, 0, 68)
@@ -4750,16 +4750,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 80)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 76)
 
 [node name="WorldWall6" parent="GameWorld/ArenaD/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 72)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 72)
 
 [node name="WorldWall7" parent="GameWorld/ArenaD/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 92)
 
 [node name="WorldWall8" parent="GameWorld/ArenaD/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 88)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, 0, 88)
 
 [node name="WorldWall10" parent="GameWorld/ArenaD/Walls" instance=ExtResource("4_1atbh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 80)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, 0, 80)
 
 [node name="WorldWall11" parent="GameWorld/ArenaD/Walls" instance=ExtResource("4_1atbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 76)
@@ -5186,7 +5186,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -44, 12,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127, 0, 84)
 
 [node name="WorldDoors2" parent="GameWorld/ArenaD/Doors" instance=ExtResource("6_0ir5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47, 0, 68)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 68)
 
 [node name="WorldBars1" parent="GameWorld/ArenaD/Doors" instance=ExtResource("7_s8ci2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -128, 0, 84)
@@ -5508,7 +5508,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 68)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 64)
 
 [node name="WorldGroundA23" parent="GameWorld/Connections/Ground" instance=ExtResource("2_dck8l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 8, 60)
+transform = Transform3D(1, 0, 0, 0, 0.970313, -0.241854, 0, 0.241854, 0.970313, -4, 8, 60)
 
 [node name="Walls" type="Node3D" parent="GameWorld/Connections"]
 
@@ -6169,13 +6169,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 56)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 52)
 
 [node name="WorldCeiling8" parent="GameWorld/Connections/Ceiling" instance=ExtResource("8_kkj8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 1, 0)
 
 [node name="WorldCeiling22" parent="GameWorld/Connections/Ceiling" instance=ExtResource("8_kkj8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, 4)
 
 [node name="WorldCeiling23" parent="GameWorld/Connections/Ceiling" instance=ExtResource("8_kkj8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 0, -4)
 
 [node name="WorldCeiling9" parent="GameWorld/Connections/Ceiling" instance=ExtResource("8_kkj8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 0)
