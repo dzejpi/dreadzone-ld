@@ -16,3 +16,4 @@ texture_filter = 2
 texture = ExtResource("1_mb06c")
 
 [node name="DustAudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = &"Sound"

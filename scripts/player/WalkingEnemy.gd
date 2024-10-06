@@ -18,6 +18,11 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var creature_speed = 4
 var is_following_player = true
 
+var rat_speed = 4
+var frog_speed = 2
+var slug_speed = 1
+var spider_speed = 5
+
 var health = 100
 
 var base_damage_countdown = 2
@@ -125,6 +130,8 @@ func set_creature(creature_no):
 	creature_slug.hide()
 	creature_spider.hide()
 	
+	creature_speed = get_creature_speed()
+	
 	match(creature_no):
 		1:
 			creature_rat.show()
@@ -162,3 +169,19 @@ func get_creature_score():
 		4:
 			# Spider
 			return spider_score
+
+
+func get_creature_speed():
+	match(creature_number):
+		1:
+			# Rat
+			return rat_speed
+		2:
+			# Frog
+			return frog_speed
+		3:
+			# Slug
+			return slug_speed
+		4:
+			# Spider
+			return spider_speed
