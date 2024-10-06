@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dhds5jcdiahml"]
+[gd_scene load_steps=19 format=3 uid="uid://dhds5jcdiahml"]
 
 [ext_resource type="Script" path="res://scripts/game/GameSceneLight.gd" id="1_2buu2"]
 [ext_resource type="PackedScene" uid="uid://t4vct17iw75l" path="res://scenes/world/WorldGroundA.tscn" id="2_r5s6g"]
@@ -12,6 +12,12 @@
 [ext_resource type="FontFile" uid="uid://46bshovhdl6w" path="res://assets/fonts/kenney_fontpackage/fonts/kenney_pixel.ttf" id="12_d8x7a"]
 [ext_resource type="Texture2D" uid="uid://dtsr0ngd4o01o" path="res://assets/sprites/skybox/skybox_cube_panorama.png" id="15_8ukxv"]
 [ext_resource type="PackedScene" uid="uid://b8tc7q5tq6x8m" path="res://scenes/player/PlayerScene.tscn" id="16_i7at4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_238eg"]
+size = Vector3(97, 1, 102)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qkmqw"]
+size = Vector3(63.58, 8.2832, 1)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_supnq"]
 panorama = ExtResource("15_8ukxv")
@@ -876,7 +882,7 @@ transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, 28, 0, 3
 transform = Transform3D(-2.18557e-07, 0, -1, 0, 1, 0, 1, 0, -2.18557e-07, -32, 0, 28)
 
 [node name="WorldWall2" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -4)
 
 [node name="WorldWall3" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, -8)
@@ -912,7 +918,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 8)
 
 [node name="WorldWall30" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 4)
+
+[node name="WorldWall50" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 0)
 
 [node name="WorldWall31" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -32)
@@ -999,10 +1008,10 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0,
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 32, 0, -4)
 
 [node name="WorldWall91" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 31)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 32)
 
 [node name="WorldWall92" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 31)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0, 32)
 
 [node name="WorldWall93" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8, 0, 32)
@@ -1032,7 +1041,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 0,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16, 0, 32)
 
 [node name="WorldWall118" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 31)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 0, 32)
 
 [node name="WorldWallSlant5" parent="GameWorld/ArenaA/Walls" instance=ExtResource("3_p5cdk")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -28, 8, -32)
@@ -1179,7 +1188,10 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 20, 8,
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 12, 8, 32)
 
 [node name="WorldWall119" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 31)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8, 0, 32)
+
+[node name="WorldWall123" parent="GameWorld/ArenaA/Walls" instance=ExtResource("4_j17mn")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4, 0, 32)
 
 [node name="WorldDoors" parent="GameWorld/ArenaA/Walls" instance=ExtResource("5_lf333")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 8, -20)
@@ -1293,17 +1305,14 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 24, 8, -
 
 [node name="Doors" type="Node3D" parent="GameWorld/ArenaA"]
 
-[node name="WorldDoors1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("5_lf333")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 32)
-
 [node name="WorldDoors2" parent="GameWorld/ArenaA/Doors" instance=ExtResource("5_lf333")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 0, 0)
 
 [node name="WorldBars1" parent="GameWorld/ArenaA/Doors" instance=ExtResource("7_trv0q")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 33)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 39)
 
 [node name="WorldBars2" parent="GameWorld/ArenaA/Doors" instance=ExtResource("7_trv0q")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -33, 0, -4)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -39, 0, -4)
 
 [node name="Connections" type="Node3D" parent="GameWorld"]
 
@@ -1340,6 +1349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 40)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 36)
 
 [node name="Walls" type="Node3D" parent="GameWorld/Connections"]
+visible = false
 
 [node name="WorldWall" parent="GameWorld/Connections/Walls" instance=ExtResource("4_j17mn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 44)
@@ -1400,9 +1410,6 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40, 0
 
 [node name="Ceiling" type="Node3D" parent="GameWorld/Connections"]
 
-[node name="WorldCeiling" parent="GameWorld/Connections/Ceiling" instance=ExtResource("11_tikoj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 36)
-
 [node name="WorldCeiling2" parent="GameWorld/Connections/Ceiling" instance=ExtResource("11_tikoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 40)
 
@@ -1451,13 +1458,67 @@ outline_size = 0
 [node name="PickupGun" type="Node3D" parent="GameWorld/Pickups"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
 
+[node name="Colliders" type="Node3D" parent="GameWorld"]
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/Colliders"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/Colliders/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 8.5)
+shape = SubResource("BoxShape3D_238eg")
+
+[node name="CollisionWalls" type="Node3D" parent="GameWorld"]
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/CollisionWalls"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/CollisionWalls/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50016, 3.6416, -32.499)
+shape = SubResource("BoxShape3D_qkmqw")
+
+[node name="CollisionWalls4" type="Node3D" parent="GameWorld"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/CollisionWalls4"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/CollisionWalls4/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8645, 3.6416, -32.499)
+shape = SubResource("BoxShape3D_qkmqw")
+
+[node name="CollisionWalls5" type="Node3D" parent="GameWorld"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 22, 0, 0)
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/CollisionWalls5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.77617, 0, 3.30123e-07)
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/CollisionWalls5/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05739, 3.6416, -32.499)
+shape = SubResource("BoxShape3D_qkmqw")
+
+[node name="CollisionWalls2" type="Node3D" parent="GameWorld"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/CollisionWalls2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58606e-09, 0, -0.0591621)
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/CollisionWalls2/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.50016, 3.6416, -32.499)
+shape = SubResource("BoxShape3D_qkmqw")
+
+[node name="CollisionWalls3" type="Node3D" parent="GameWorld"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, 0)
+
+[node name="HardSurface" type="StaticBody3D" parent="GameWorld/CollisionWalls3"]
+
+[node name="HardSurfaceCollider" type="CollisionShape3D" parent="GameWorld/CollisionWalls3/HardSurface"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15984, 3.6416, -32.3079)
+shape = SubResource("BoxShape3D_qkmqw")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_vdd5h")
 
 [node name="CharacterBodies" type="Node3D" parent="."]
 
 [node name="PlayerScene" parent="CharacterBodies" instance=ExtResource("16_i7at4")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 3, 53)
+transform = Transform3D(1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, 2, 3, 29)
 
 [node name="BeginningArenaA" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 28)
