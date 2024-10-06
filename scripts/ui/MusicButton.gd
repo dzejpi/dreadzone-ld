@@ -20,6 +20,8 @@ func _ready():
 
 
 func _on_pressed():
+	global_var.play_sound("select")
+	
 	if is_music_on:
 		is_music_on = false
 		music_label.text = "Music: off"

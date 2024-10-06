@@ -7,3 +7,4 @@ extends TextureButton
 func _on_pressed():
 	game_pause_scene.is_game_paused = false
 	release_focus()
+	global_var.play_sound("select")

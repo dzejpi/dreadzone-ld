@@ -14,7 +14,7 @@ var record_enemies_killed = 0
 var music_game_music = null
 
 # Necessary to replace null with a proper preload("res://...")
-var sfx_sound_placeholder = null
+const SOUND_SELECT = preload("res://assets/sfx/sound_select.mp3")
 
 var current_player_position = Vector3()
 
@@ -32,13 +32,13 @@ func stop_music():
 
 func play_sound(sfx_name):
 	match(sfx_name):
-		"placeholder":
-			sfx_node.stream = sfx_sound_placeholder
+		"select":
+			sfx_node.stream = SOUND_SELECT
 			sfx_node.play()
 
 
 func stop_sound(sfx_name):
 	match(sfx_name):
 		"placeholder":
-			sfx_node.stream = sfx_sound_placeholder
+			sfx_node.stream = SOUND_SELECT
 			sfx_node.stop()

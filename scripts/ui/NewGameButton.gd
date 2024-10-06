@@ -13,3 +13,4 @@ func _process(_delta):
 func _on_pressed():
 	transition_overlay.fade_in()
 	is_button_pressed = true
+	global_var.play_sound("select")
