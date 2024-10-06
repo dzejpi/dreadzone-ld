@@ -235,18 +235,7 @@ func _input(event):
 		if event is InputEventMouseMotion:
 			rotation_degrees.y -= event.relative.x * mouse_sensitivity / 10
 			player_camera.rotation_degrees.x = clamp(player_camera.rotation_degrees.x - event.relative.y * mouse_sensitivity / 10, -90, 90)
-	
-		if Input.is_action_just_pressed("game_pause"):
-			if !is_game_over && !is_game_won:
-				if is_game_paused:
-					is_game_paused = false
-					game_pause_scene.is_game_paused = is_game_paused
-				else:
-					is_game_paused = true
-					game_pause_scene.is_game_paused = is_game_paused
-			
-			update_pause_state()
-			
+		
 		if Input.is_action_just_pressed("gun_a"):
 			switch_gun(1)
 		
@@ -270,6 +259,17 @@ func _input(event):
 		if Input.is_action_pressed("gun_shoot"):
 			if !is_switching_weapon:
 				fire_weapon()
+	
+	if Input.is_action_just_pressed("game_pause"):
+			if !is_game_over && !is_game_won:
+				if is_game_paused:
+					is_game_paused = false
+					game_pause_scene.is_game_paused = is_game_paused
+				else:
+					is_game_paused = true
+					game_pause_scene.is_game_paused = is_game_paused
+			
+			update_pause_state()
 
 
 func _physics_process(delta):
