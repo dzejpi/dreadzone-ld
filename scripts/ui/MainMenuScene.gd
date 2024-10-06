@@ -12,6 +12,7 @@ var credits_x_position = -1280.0
 func _ready():
 	transition_overlay.fade_out()
 	high_score_label.text = "Highest score: " + str(global_var.record_score)
+	global_var.stop_music()
 
 
 func _process(delta):

@@ -17,13 +17,15 @@ var music_game_music = null
 const SOUND_SELECT = preload("res://assets/sfx/sound_select.mp3")
 const SOUND_PICKING_UP = preload("res://assets/sfx/sound_picking_up.mp3")
 
+const MUSIC_DREADZONE = preload("res://assets/music/music_dreadzone.mp3")
+
 var current_player_position = Vector3()
 
 var is_player_playing = true
 
 
 func play_music():
-	music_node.stream = music_game_music
+	music_node.stream = MUSIC_DREADZONE
 	music_node.play()
 
 
