@@ -487,7 +487,7 @@ func fire_weapon():
 				gun_animation_player.play("shoot_machine_gun")
 				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
 				player_audio_stream_player_3d.play()
-			4:
+			5:
 				gun_animation_player.play("shoot_minigun")
 				player_audio_stream_player_3d.stream = SOUND_GUNSHOT_B
 				player_audio_stream_player_3d.play()
