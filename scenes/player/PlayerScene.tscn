@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8tc7q5tq6x8m"]
+[gd_scene load_steps=26 format=3 uid="uid://b8tc7q5tq6x8m"]
 
 [ext_resource type="Script" path="res://scripts/player/PlayerScene.gd" id="1_63dc3"]
 [ext_resource type="PackedScene" uid="uid://ctfwa14d6xy7i" path="res://scenes/weapons/WeaponPistol.tscn" id="2_c2ur0"]
@@ -124,11 +124,39 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_ddluc"]
+resource_name = "weapon_change"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera/PlayerHands:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.16, -0.19966, -0.14), Vector3(0.16, -0.368108, 0.0488767), Vector3(0.16, -0.19966, -0.14)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera/PlayerHands:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.62591, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_njsvg"]
 _data = {
 "RESET": SubResource("Animation_gm3ra"),
 "idle": SubResource("Animation_h5chk"),
-"run": SubResource("Animation_n5hrj")
+"run": SubResource("Animation_n5hrj"),
+"weapon_change": SubResource("Animation_ddluc")
 }
 
 [sub_resource type="Animation" id="Animation_lneqm"]

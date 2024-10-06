@@ -86,6 +86,11 @@ var camera_tilt_speed = 5
 var message_base_countdown = 2
 var message_current_countdown = 0
 
+var is_switching_weapon = false
+var is_new_weapon_displayed = false
+var base_weapon_switch_countdown = 1
+var current_weapon_switch_countdown = 0
+
 var debug = true
 
 
@@ -100,6 +105,13 @@ func _ready():
 	game_over_scene.hide()
 	game_won_scene.hide()
 	animation_player.play("idle")
+	
+	# Have all weapons available right away
+	if debug:
+		is_rifle_available = true
+		is_shotgun_available = true
+		is_machine_gun_available = true
+		is_minigun_available = true
 
 
 func _process(delta):
@@ -108,6 +120,41 @@ func _process(delta):
 	
 	# Camera tilting, 0 by default
 	var camera_tilt_target = 0.0
+	
+	if is_switching_weapon:
+		if current_weapon_switch_countdown > 0:
+			current_weapon_switch_countdown -= 1 * delta
+			
+			# Show new weapon once countdown is under 0.5
+			if current_weapon_switch_countdown <= 0.5:
+				if !is_new_weapon_displayed:
+					is_new_weapon_displayed = true
+					
+					weapon_pistol.hide()
+					weapon_rifle.hide()
+					weapon_shotgun.hide()
+					weapon_machine_gun.hide()
+					weapon_minigun.hide()
+					
+					match(current_gun):
+						1:
+							# Pistol
+							weapon_pistol.show()
+						2:
+							# Rifle
+							weapon_rifle.show()
+						3:
+							# Shotgun
+							weapon_shotgun.show()
+						4:
+							# Machine gun
+							weapon_machine_gun.show()
+						5:
+							# Minigun
+							weapon_minigun.show()
+		else:
+			current_weapon_switch_countdown = 0
+			is_switching_weapon = false
 	
 	# Info for creatures to stop
 	if is_game_paused or is_game_won or is_game_over:
@@ -191,7 +238,8 @@ func _input(event):
 		
 		# Autofire for now. Might differentiate later non-automatic guns. 
 		if Input.is_action_pressed("gun_shoot"):
-			fire_weapon()
+			if !is_switching_weapon:
+				fire_weapon()
 
 
 func _physics_process(delta):
@@ -208,7 +256,9 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
-		animation_player.play("idle")
+		if !is_switching_weapon:
+			animation_player.play("idle")
+		
 		if Input.is_action_pressed("move_sprint"):
 			if !is_game_paused && !is_game_over && !is_game_won:
 				velocity.x = direction.x * SPEED * 2
@@ -314,29 +364,11 @@ func change_fov(new_fov):
 func switch_gun(new_gun):
 	if current_gun != new_gun:
 		current_gun = new_gun
+		animation_player.play("weapon_change")
 		
-		weapon_pistol.hide()
-		weapon_rifle.hide()
-		weapon_shotgun.hide()
-		weapon_machine_gun.hide()
-		weapon_minigun.hide()
-		
-		match(new_gun):
-			1:
-				# Pistol
-				weapon_pistol.show()
-			2:
-				# Rifle
-				weapon_rifle.show()
-			3:
-				# Shotgun
-				weapon_shotgun.show()
-			4:
-				# Machine gun
-				weapon_machine_gun.show()
-			5:
-				# Minigun
-				weapon_minigun.show()
+		is_switching_weapon = true
+		is_new_weapon_displayed = false
+		current_weapon_switch_countdown = base_weapon_switch_countdown
 
 
 func receive_damage(damage_received):
