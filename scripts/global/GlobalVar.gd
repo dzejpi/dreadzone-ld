@@ -53,7 +53,3 @@ func add_score(amount):
 	
 	if current_score > record_score:
 		record_score = current_score
-
-
-func give_player_gun(gun_number):
-	pass

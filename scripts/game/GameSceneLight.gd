@@ -106,15 +106,17 @@ func trigger_arena_a_event(event_triggered):
 		5:
 			spawn_health()
 			spawn_on_nth("a", 8, 2)
-		30:
-			spawn_gun(2)
-			spawn_on_nth("a", 4, 2)
+		10:
+			spawn_on_nth("a", 4, 4)
 		20:
 			spawn_on_nth("a", 4, 6)
 		30:
+			spawn_gun(2)
 			spawn_on_nth("a", 4, 6)
 		40:
 			spawn_on_nth("a", 2, 6)
+		60:
+			spawn_health()
 		65:
 			spawn_on_nth("a", 8, 2)
 		70:
@@ -125,13 +127,41 @@ func trigger_arena_a_event(event_triggered):
 			spawn_gun(3)
 			spawn_on_nth("a", 4, 6)
 		100:
-			spawn_on_nth("a", 2, 6)
+			spawn_on_nth("a", 1, 2)
 		110:
-			spawn_on_nth("a", 2, 6)
+			spawn_health()
+			spawn_on_nth("a", 1, 2)
+		120:
+			spawn_on_nth("a", 1, 2)
+		130:
+			spawn_on_nth("a", 1, 2)
+		140:
+			spawn_on_nth("a", 1, 2)
 		150:
 			spawn_gun(4)
+		170:
+			spawn_on_nth("a", 2, 6)
+		180:
+			spawn_health()
+			spawn_on_nth("a", 2, 6)
+		190:
+			spawn_health()
+			spawn_on_nth("a", 2, 6)
+		200:
+			spawn_on_nth("a", 2, 4)
+		220:
+			spawn_on_nth("a", 1, 4)
+		240:
+			spawn_on_nth("a", 2, 4)
 		260:
 			spawn_gun(5)
+		270:
+			turn_all_spawners_on("a", 6)
+		300:
+			turn_all_spawners_off("a")
+			spawn_on_nth("a", 1, 1)
+		320:
+			turn_all_spawners_on("a", 6)
 
 
 func heal_player(amount):
@@ -145,9 +175,11 @@ func give_player_gun(gun_number):
 func spawn_health():
 	var new_health = WORLD_HEALTH_PICKUP.instantiate()
 	pickups.add_child(new_health)
+	player_scene.show_message("Health dropped!")
 
 
 func spawn_gun(gun_number):
 	var new_gun_pickup = WORLD_GUN_PICKUP.instantiate()
 	pickup_gun.add_child(new_gun_pickup)
 	new_gun_pickup.set_gun(gun_number)
+	player_scene.show_message("Health dropped!")
