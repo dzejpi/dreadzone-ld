@@ -65,10 +65,10 @@
 		{
 			"bufferView":0,
 			"componentType":5126,
-			"count":134,
+			"count":440,
 			"max":[
 				0.029999995604157448,
-				0.18000000715255737,
+				0.19500000774860382,
 				0
 			],
 			"min":[
@@ -81,19 +81,19 @@
 		{
 			"bufferView":1,
 			"componentType":5126,
-			"count":134,
+			"count":440,
 			"type":"VEC3"
 		},
 		{
 			"bufferView":2,
 			"componentType":5126,
-			"count":134,
+			"count":440,
 			"type":"VEC2"
 		},
 		{
 			"bufferView":3,
 			"componentType":5123,
-			"count":300,
+			"count":1044,
 			"type":"SCALAR"
 		},
 		{
@@ -134,56 +134,56 @@
 	"bufferViews":[
 		{
 			"buffer":0,
-			"byteLength":1608,
+			"byteLength":5280,
 			"byteOffset":0,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1608,
-			"byteOffset":1608,
+			"byteLength":5280,
+			"byteOffset":5280,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":1072,
-			"byteOffset":3216,
+			"byteLength":3520,
+			"byteOffset":10560,
 			"target":34962
 		},
 		{
 			"buffer":0,
-			"byteLength":600,
-			"byteOffset":4288,
+			"byteLength":2088,
+			"byteOffset":14080,
 			"target":34963
 		},
 		{
 			"buffer":0,
 			"byteLength":1032,
-			"byteOffset":4888,
+			"byteOffset":16168,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":1032,
-			"byteOffset":5920,
+			"byteOffset":17200,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":688,
-			"byteOffset":6952,
+			"byteOffset":18232,
 			"target":34962
 		},
 		{
 			"buffer":0,
 			"byteLength":264,
-			"byteOffset":7640,
+			"byteOffset":18920,
 			"target":34963
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":7904,
+			"byteLength":19184,
 			"uri":"obj_gun_c_shotgun.bin"
 		}
 	]
