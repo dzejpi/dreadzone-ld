@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://767whxsnrq8i"
-path.s3tc="res://.godot/imported/spr_gunfire.png-b73b69e6981a8c8092c5f1b29439baab.s3tc.ctex"
+path="res://.godot/imported/spr_gunfire.png-b73b69e6981a8c8092c5f1b29439baab.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/sprites/game_textures/spr_gunfire.png"
-dest_files=["res://.godot/imported/spr_gunfire.png-b73b69e6981a8c8092c5f1b29439baab.s3tc.ctex"]
+dest_files=["res://.godot/imported/spr_gunfire.png-b73b69e6981a8c8092c5f1b29439baab.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

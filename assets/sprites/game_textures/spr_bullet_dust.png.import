@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xrsb1l5u6hrm"
-path.s3tc="res://.godot/imported/spr_bullet_dust.png-7802abffd5ba7497900a237f621cac08.s3tc.ctex"
+path="res://.godot/imported/spr_bullet_dust.png-7802abffd5ba7497900a237f621cac08.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/sprites/game_textures/spr_bullet_dust.png"
-dest_files=["res://.godot/imported/spr_bullet_dust.png-7802abffd5ba7497900a237f621cac08.s3tc.ctex"]
+dest_files=["res://.godot/imported/spr_bullet_dust.png-7802abffd5ba7497900a237f621cac08.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
