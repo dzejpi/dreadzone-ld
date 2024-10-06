@@ -34,6 +34,7 @@ const JUMP_VELOCITY = 4.5
 @onready var animation_player: AnimationPlayer = $PlayerHead/AnimationPlayer
 @onready var gun_animation_player: AnimationPlayer = $PlayerHead/GunAnimationPlayer
 
+@onready var damage_indicator: Sprite2D = $PlayerUI/GameUI/DamageIndicator
 
 @export var is_fov_dynamic = true
 
@@ -193,6 +194,15 @@ func _process(delta):
 	
 	if current_invincibility_countdown > 0:
 		current_invincibility_countdown -= 1 * delta
+		
+		# Start fading once it's 1 or less
+		if current_invincibility_countdown <= 1:
+			# Make sure it's not below 0
+			if current_invincibility_countdown <= 0:
+				current_invincibility_countdown = 0
+			
+			damage_indicator.modulate.a = current_invincibility_countdown
+			print("Damage indicator modulate A is: " + str(damage_indicator.modulate.a))
 	
 	if shooting_countdown > 0:
 		shooting_countdown -= 1 * delta
@@ -381,7 +391,7 @@ func receive_damage(damage_received):
 	if current_invincibility_countdown <= 0:
 		current_invincibility_countdown = base_invincibility_countdown
 		
-		#display_hurt_indicator()
+		display_hurt_indicator()
 		player_health -= damage_received
 		if player_health <= 0:
 			player_health = 0
@@ -553,3 +563,7 @@ func turn_all_fires_down():
 	weapon_shotgun_fire.hide()
 	weapon_machine_gun_fire.hide()
 	weapon_minigun_fire.hide()
+
+
+func display_hurt_indicator():
+	damage_indicator.modulate.a = 1
