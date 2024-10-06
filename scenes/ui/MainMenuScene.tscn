@@ -19,7 +19,7 @@
 script = ExtResource("1_mj8q0")
 
 [node name="MainMenuSection" type="Node2D" parent="."]
-position = Vector2(32, 32)
+position = Vector2(96, 128)
 
 [node name="MenuButtons" type="Node2D" parent="MainMenuSection"]
 
@@ -165,6 +165,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="GameScene" parent="." instance=ExtResource("14_x1j84")]
+
+[node name="HighScoreLabel" type="Label" parent="."]
+offset_left = 353.0
+offset_top = 128.0
+offset_right = 1280.0
+offset_bottom = 192.0
+theme = ExtResource("8_w4hn0")
+text = "High score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreLabelNext" type="Label" parent="."]
+offset_left = 353.0
+offset_top = 184.0
+offset_right = 1280.0
+offset_bottom = 248.0
+theme = ExtResource("8_w4hn0")
+text = "... so far!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="MainMenuSection/MenuButtons/NewGameButton" to="MainMenuSection/MenuButtons/NewGameButton" method="_on_pressed"]
 [connection signal="pressed" from="MainMenuSection/MenuButtons/MusicButton" to="MainMenuSection/MenuButtons/MusicButton" method="_on_pressed"]

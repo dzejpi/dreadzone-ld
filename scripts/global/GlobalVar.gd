@@ -46,3 +46,10 @@ func stop_sound(sfx_name):
 		"placeholder":
 			sfx_node.stream = SOUND_SELECT
 			sfx_node.stop()
+
+
+func add_score(amount):
+	current_score += amount
+	
+	if current_score > record_score:
+		record_score = current_score

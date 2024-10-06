@@ -1,6 +1,9 @@
 extends Node2D
 
 
+@onready var high_score_label: Label = $HighScoreLabel
+
+
 var current_focus = "main_menu"
 var main_menu_x_position = 0.0
 var credits_x_position = -1280.0
@@ -8,6 +11,7 @@ var credits_x_position = -1280.0
 
 func _ready():
 	transition_overlay.fade_out()
+	high_score_label.text = "Highest score: " + str(global_var.record_score)
 
 
 func _process(delta):
