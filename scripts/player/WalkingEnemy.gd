@@ -73,6 +73,12 @@ func _physics_process(delta: float) -> void:
 		# Jump at player if within the distance
 		var distance
 		distance = global_transform.origin.distance_to(global_var.current_player_position)
+		
+		if creature_number == 2 and current_jump_countdown <= 0:
+			current_jump_countdown = base_jump_countdown / 2
+			# Jump
+			velocity.y = JUMP_VELOCITY
+		
 		if distance < 3:
 			if current_jump_countdown <= 0:
 				current_jump_countdown = base_jump_countdown
@@ -92,6 +98,8 @@ func seek_player():
 
 
 func set_creature(creature_no):
+	creature_number = creature_no
+	
 	creature_rat.hide()
 	creature_frog.hide()
 	creature_slug.hide()
