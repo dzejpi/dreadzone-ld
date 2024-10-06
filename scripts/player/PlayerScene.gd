@@ -40,6 +40,7 @@ const SOUND_GUNSHOT_A = preload("res://assets/sfx/sound_gunshot_a.mp3")
 const SOUND_GUNSHOT_B = preload("res://assets/sfx/sound_gunshot_b.mp3")
 const SOUND_GUNSHOT_HEAVY = preload("res://assets/sfx/sound_gunshot_heavy.mp3")
 const SOUND_HURT = preload("res://assets/sfx/sound_hurt.mp3")
+const SOUND_WEAPON_CHANGE = preload("res://assets/sfx/sound_weapon_change.mp3")
 
 @onready var player_audio_stream_player_3d: AudioStreamPlayer3D = $PlayerAudioStreamPlayer3D
 
@@ -386,6 +387,10 @@ func change_fov(new_fov):
 func switch_gun(new_gun):
 	if current_gun != new_gun:
 		current_gun = new_gun
+		
+		player_audio_stream_player_3d.stream = SOUND_WEAPON_CHANGE
+		player_audio_stream_player_3d.play()
+		
 		animation_player.play("weapon_change")
 		
 		is_switching_weapon = true
