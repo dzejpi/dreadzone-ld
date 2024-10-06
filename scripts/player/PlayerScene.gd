@@ -114,6 +114,7 @@ var debug = true
 
 func _ready():
 	global_var.is_player_playing = true
+	global_var.current_score = 0
 	player_camera.fov = current_fov
 	switch_gun(current_gun)
 	transition_overlay.fade_out()
