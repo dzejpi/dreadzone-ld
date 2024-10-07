@@ -40,6 +40,8 @@ func _ready():
 
 
 func _process(delta: float) -> void:
+	#print("Number of nodes in the scene: ", str(get_tree().get_node_count()))
+
 	if is_player_in_arena_a and !is_arena_a_clear:
 		manage_arena_a_events(delta)
 

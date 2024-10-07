@@ -32,12 +32,3 @@ func _process(delta: float) -> void:
 		countdown -= 1 * delta
 		sprite_a.modulate.a = countdown
 		sprite_b.modulate.a = countdown
-	else:
-		if get_parent() != null:
-			var parent_name = get_parent().name
-			if parent_name == "BloodDecal" or parent_name == "BulletDecal":
-				# Delete parent and self
-				get_parent().queue_free()
-		else:
-			# No parent, delete just self
-			queue_free()

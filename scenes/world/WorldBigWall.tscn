@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgf2qub2apsg6"]
+
+[ext_resource type="PackedScene" uid="uid://bqtqlsqrixat4" path="res://assets/obj/world_obj/obj_big_wall.gltf" id="1_eveht"]
+[ext_resource type="Texture2D" uid="uid://cn0dymnrcdywv" path="res://assets/obj/spr_dreadzone_wall.png" id="2_2wlok"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcuik"]
+albedo_texture = ExtResource("2_2wlok")
+texture_filter = 2
+
+[node name="WorldBigWall" instance=ExtResource("1_eveht")]
+
+[node name="obj_big_wall" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qcuik")
